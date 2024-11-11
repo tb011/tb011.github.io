@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "Welcome to my online website.\n\n{r} # 1 + 1 #"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n1 + 1"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "List of projects:\nExample R code\nloadData &lt;- function(dataset_csv, list){\n  dataset &lt;- read.csv(dataset_csv)\n  results &lt;- lapply(dataset, list) \n  return(results)\n}\n\nresults &lt;- loadData(dataset_csv, list)"
+  }
+]

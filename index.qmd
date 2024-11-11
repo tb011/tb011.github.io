@@ -4,7 +4,4 @@ title: "tb011.github.io"
 
 Welcome to my online website.
 
-
-# ```{r}
-# 1 + 1
-# ```
+# `{r} # 1 + 1 #`

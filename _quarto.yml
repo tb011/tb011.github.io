@@ -5,9 +5,11 @@ website:
   title: "tb011.github.io"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: index.qmd #landing page 
+        text: Home # button text
+      - about.qmd 
+      - projects.qmd
+      - favourites.qmd
 
 format:
   html:
