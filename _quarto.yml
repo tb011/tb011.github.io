@@ -7,7 +7,6 @@ website:
     left:
       - href: index.qmd #landing page 
         text: Home # button text
-      - about.qmd 
       - projects.qmd
       - favourites.qmd
 
