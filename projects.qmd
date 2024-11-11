@@ -6,7 +6,7 @@ List of projects:
 
 Example R code
 
-```{r}
+```
 loadData <- function(dataset_csv, list){
   dataset <- read.csv(dataset_csv)
   results <- lapply(dataset, list) 
