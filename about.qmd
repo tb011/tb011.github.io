@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
-
 
 1 + 1
 

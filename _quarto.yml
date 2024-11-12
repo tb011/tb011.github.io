@@ -9,8 +9,7 @@ website:
         text: Home # button text
       - about.qmd 
       - projects.qmd
-      - favourites.qmd
-
+      
 format:
   html:
     theme: cosmo
