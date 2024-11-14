@@ -19,5 +19,26 @@
     "title": "Projects",
     "section": "",
     "text": "List of projects:\nExample R code\nloadData &lt;- function(dataset_csv, list){\n  dataset &lt;- read.csv(dataset_csv)\n  results &lt;- lapply(dataset, list) \n  return(results)\n}\n\nresults &lt;- loadData(dataset_csv, list)"
+  },
+  {
+    "objectID": "health_data_analysis.html",
+    "href": "health_data_analysis.html",
+    "title": "Health Data Analysis",
+    "section": "",
+    "text": "Given series of data tables could I extract valuable information on patients an SQL database?\nLet’s give it a go!"
+  },
+  {
+    "objectID": "health_data_analysis.html#data-tables",
+    "href": "health_data_analysis.html#data-tables",
+    "title": "Health Data Analysis",
+    "section": "Data Tables",
+    "text": "Data Tables\n\n\nAPPENDIX A\nGender: 1 = Male, 2 = Female, 9 = Unknown\nEthnicity: 01 = White, 02 = Non-white, 03 = Unknown\n\n\nAPPENDIX B\nPrimary diagnosis – ICD-10 code:\nProstate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20"
+  },
+  {
+    "objectID": "health_data_analysis.html#how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017",
+    "href": "health_data_analysis.html#how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017",
+    "title": "Health Data Analysis",
+    "section": "How many patients were diagnosed with prostate cancer between 2015 and 2017?",
+    "text": "How many patients were diagnosed with prostate cancer between 2015 and 2017?\n\nSELECT COUNT (Patient_table.patient_id) as number_of_patients \nFROM Patient_table \nJOIN Tumor_table \n ON Patient_table.patient_id = Tumor_table.patient_id \nJOIN Regimen_table \n ON Patient_table.patient_id = Regimen_table.patient_id \n WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';"
   }
 ]
