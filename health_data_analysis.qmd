@@ -7,21 +7,25 @@ categories:
   - Database
 ---
 
+**Aim**
+
 Given series of data tables could I extract valuable information on patients an SQL database?
 
 Let's give it a go!
 
-**Data Tables**
+**Data **
 
-![](images/data_tables.png){width="300"}
+***Data Tables ***
 
-**Appendix A**
+![](images/data_tables.png){width="400"}
+
+***Appendix A***
 
 Gender: 1 = Male, 2 = Female, 9 = Unknown
 
 Ethnicity: 01 = White, 02 = Non-white, 03 = Unknown
 
-**Appendix B**
+***Appendix B***
 
 Primary diagnosis -- ICD-10 code:
 
