@@ -111,19 +111,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#data-tables" id="toc-data-tables" class="nav-link active" data-scroll-target="#data-tables">Data Tables</a>
-  <ul class="collapse">
-  <li><a href="#appendix-a" id="toc-appendix-a" class="nav-link" data-scroll-target="#appendix-a">APPENDIX A</a></li>
-  <li><a href="#appendix-b" id="toc-appendix-b" class="nav-link" data-scroll-target="#appendix-b">APPENDIX B</a></li>
-  </ul></li>
-  <li><a href="#how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017" id="toc-how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017" class="nav-link" data-scroll-target="#how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017">How many patients were diagnosed with prostate cancer between 2015 and 2017?</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -154,23 +143,16 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Given series of data tables could I extract valuable information on patients an SQL database?</p>
 <p>Let’s give it a go!</p>
-<section id="data-tables" class="level2">
-<h2 class="anchored" data-anchor-id="data-tables">Data Tables</h2>
+<p><strong>Data Tables</strong></p>
 <p><img src="images/data_tables.png" class="img-fluid" width="203"></p>
-<section id="appendix-a" class="level3">
-<h3 class="anchored" data-anchor-id="appendix-a">APPENDIX A</h3>
+<p><strong>Appendix A</strong></p>
 <p>Gender: 1 = Male, 2 = Female, 9 = Unknown</p>
 <p>Ethnicity: 01 = White, 02 = Non-white, 03 = Unknown</p>
-</section>
-<section id="appendix-b" class="level3">
-<h3 class="anchored" data-anchor-id="appendix-b">APPENDIX B</h3>
+<p><strong>Appendix B</strong></p>
 <p>Primary diagnosis – ICD-10 code:</p>
 <p>Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20</p>
-</section>
-</section>
-<section id="how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017" class="level2">
-<h2 class="anchored" data-anchor-id="how-many-patients-were-diagnosed-with-prostate-cancer-between-2015-and-2017">How many patients were diagnosed with prostate cancer between 2015 and 2017?</h2>
-<pre class="{sql}"><code>
+<p><strong>How many patients were diagnosed with prostate cancer between 2015 and 2017?</strong></p>
+<pre><code>
 SELECT COUNT (Patient_table.patient_id) as number_of_patients 
 FROM Patient_table 
 JOIN Tumor_table 
@@ -181,7 +163,6 @@ JOIN Regimen_table
 </code></pre>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
