@@ -29,11 +29,14 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
 
 **How many patients were diagnosed with prostate cancer between 2015 and 2017?**
 
+```{sql}
 
-    SELECT COUNT (Patient_table.patient_id) as number_of_patients 
-    FROM Patient_table 
-    JOIN Tumor_table 
-     ON Patient_table.patient_id = Tumor_table.patient_id 
-    JOIN Regimen_table 
-     ON Patient_table.patient_id = Regimen_table.patient_id 
-     WHERE primary_diagnosis = 'C61' and regimen_start_date \>= '01/01/2015' and regimen_start_date \<= '31/01/2017';
+SELECT COUNT (Patient_table.patient_id) as number_of_patients 
+FROM Patient_table 
+JOIN Tumor_table 
+ ON Patient_table.patient_id = Tumor_table.patient_id 
+JOIN Regimen_table 
+ ON Patient_table.patient_id = Regimen_table.patient_id 
+ WHERE primary_diagnosis = 'C61' and regimen_start_date \>= '01/01/2015' and regimen_start_date \<= '31/01/2017';
+
+```

@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Primary diagnosis – ICD-10 code:</p>
 <p>Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20</p>
 <p><strong>How many patients were diagnosed with prostate cancer between 2015 and 2017?</strong></p>
-<pre><code>
+<pre class="{sql}"><code>
 SELECT COUNT (Patient_table.patient_id) as number_of_patients 
 FROM Patient_table 
 JOIN Tumor_table 
