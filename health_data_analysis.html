@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Given series of data tables could I extract valuable information on patients an SQL database?</p>
 <p>Let’s give it a go!</p>
 <p><strong>Data Tables</strong></p>
-<p><img src="images/data_tables.png" class="img-fluid" width="203"></p>
+<p><img src="images/data_tables.png" class="img-fluid" width="20"></p>
 <p><strong>Appendix A</strong></p>
 <p>Gender: 1 = Male, 2 = Female, 9 = Unknown</p>
 <p>Ethnicity: 01 = White, 02 = Non-white, 03 = Unknown</p>
@@ -152,13 +152,49 @@ ul.task-list li input[type="checkbox"] {
 <p>Primary diagnosis – ICD-10 code:</p>
 <p>Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20</p>
 <p><strong>How many patients were diagnosed with prostate cancer between 2015 and 2017?</strong></p>
-<pre><code>SELECT COUNT (Patient_table.patient_id) as number_of_patients 
+<pre><code>
+SELECT COUNT (Patient_table.patient_id) as number_of_patients 
 FROM Patient_table 
 JOIN Tumor_table 
  ON Patient_table.patient_id = Tumor_table.patient_id 
 JOIN Regimen_table 
  ON Patient_table.patient_id = Regimen_table.patient_id 
- WHERE primary_diagnosis = 'C61' and regimen_start_date \&gt;= '01/01/2015' and regimen_start_date \&lt;= '31/01/2017';</code></pre>
+ WHERE primary_diagnosis = 'C61' and regimen_start_date \&gt;= '01/01/2015' and regimen_start_date \&lt;= '31/01/2017';
+</code></pre>
+<p><strong>Count the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?</strong></p>
+<pre><code>SELECT COUNT (Patient_table.patient_id) as number_of_patients
+FROM Patient_table
+JOIN Tumor_table
+  ON Patient_table.patient_id = Tumor_table.patient_id
+JOIN Regimen_table
+  ON Patient_table.patient_id = Regimen_table.patient_id
+WHERE primary_diagnosis = 'C61' 
+and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/01/2017' 
+and regimen = 'docetaxel';</code></pre>
+<p><strong>Stratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.</strong></p>
+<pre><code>SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age
+  FROM (SELECT Patient_table.patient_id 
+          , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, Regimen_table.regimen_start_date), Date_of_birth) &gt; Regimen_table.regimen_start_date 
+         THEN datediff(year, Date_of_birth, Regimen_table.regimen_start_date) - 1 
+                         ELSE datediff(year, Date_of_birth, Regimen_table.regimen_start_date)
+               END) AS Age_at_regimen
+          , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, getdate()), Date_of_birth) &gt; getdate()
+                        THEN datediff(year, Date_of_birth, getdate()) - 1 
+                        ELSE datediff(year, Date_of_birth, getdate())
+               END) AS Age
+          , Regimen, primary_diagnosis, regimen_start_date, gender, Date_of_birth, Ethnicity 
+          FROM Patient_table  
+JOIN Tumor_table
+  ON Patient_table.patient_id = Tumor_table.patient_id
+JOIN Regimen_table
+  ON Patient_table.patient_id = Regimen_table.patient_id
+WHERE primary_diagnosis = 'C50' -- breast cancer ICD-10 code
+and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/12/2020' -- between 2015 and 2020
+and regimen = 'eribulin' 
+and gender = 2 -- only women
+      ) AS results
+     WHERE results.Age_at_regimen &gt;= 50
+GROUP BY Ethnicity, Age;</code></pre>
 
 
 
