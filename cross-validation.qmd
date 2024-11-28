@@ -9,19 +9,21 @@ categories:
 
 The question:
 
-When we do a 25% / 75% split. How do we know that the i.e. last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? It may randomly not be a good selection.
+When we do a 25% / 75% split, how do we know that the last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? Of course, it may *randomly not* be a good selection.
 
 Bring in *k*-fold cross-validation.
 
 ## *K*-fold cross validation
 
-Example: 4-fold cross validation (k = 4)
+Example: 4-fold cross validation (*k* = 4)
 
-1\. split the data in *k*-(4) folds.
+ 1. split the data in *k*-(4) folds.
 
-2\. Train on 3 partitions of the data, test on the remaining block. Take the below permutations
+2. Train on 3 partitions of the data, test on the remaining block.
 
-Train {2, 3, 4} ; Test {1}
+Take the following permutations:
+
+Train {2, 3, 4} ; Test {1}:
 
 \| 1 \| - test
 
@@ -31,7 +33,7 @@ Train {2, 3, 4} ; Test {1}
 
 \| 4 \| - train
 
-Train {1, 3, 4} ; Test {2}
+Train {1, 3, 4} ; Test {2}:
 
 \| 1 \| - train
 
@@ -41,7 +43,7 @@ Train {1, 3, 4} ; Test {2}
 
 \| 4 \| - train
 
-Train {1, 2, 4} ; Test {3}
+Train {1, 2, 4} ; Test {3}:
 
 \| 1 \| - train
 
@@ -51,7 +53,7 @@ Train {1, 2, 4} ; Test {3}
 
 \| 4 \| - train
 
-Train {1, 2, 3} ; Test {4}
+Train {1, 2, 3} ; Test {4}:
 
 \| 1 \| - train
 
@@ -79,7 +81,7 @@ Therefore, we can use stratified k-fold cross validation to keep the same percen
 
 ## Repeated stratified *k*-fold cross-validation
 
-I came across [a suggestion](https://machinelearningmastery.com/multinomial-logistic-regression-with-python/) of using a repeated stratified *k*-fold cross-validation when I was training a logisitic regression model on a [diabetes dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset). I wondered if it could improve my models performance. And then everything else led from there....
+I came across [a suggestion](https://machinelearningmastery.com/multinomial-logistic-regression-with-python/) of using a repeated stratified *k*-fold cross-validation when I was training a logistic regression model on a [diabetes dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset). I wondered if it could improve my models performance. And then everything else led from there....
 
 When using repeated stratified *k*-fold cross-validation we can repeat the random sampling of individuals in with a different randomisation in each repetition using [RepeatedStratifiedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html). This would mean that we would give our parameter *k,* for the number of folds and the parameter, *n* for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use [repeated *k-*fold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) cross-validation without the stratification!
 
