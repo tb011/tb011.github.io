@@ -79,8 +79,7 @@ Therefore, we can use stratified k-fold cross validation to keep the same percen
 
 ## Repeated stratified k-fold cross-validation
 
-If we would really like to go one step further, we can repeat the random sampling of individuals in
-with a different randomisation in each repetition using [RepeatedStratifiedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html). This would mean that we would give our parameter *k,* for the number of folds and the parameter, *n* for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use [repeated *k-*fold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) cross-validation without the stratification!
+If we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using [RepeatedStratifiedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html). This would mean that we would give our parameter *k,* for the number of folds and the parameter, *n* for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use [repeated *k-*fold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) cross-validation without the stratification!
 
 ## Final comments
 
@@ -88,6 +87,6 @@ It can be much slower to partition the data in to *k*-folds (or repeated/stratif
 
 ## References
 
-https://machinelearningmastery.com/
-
 https://scikit-learn.org/stable/index.html
+
+https://machinelearningmastery.com/
