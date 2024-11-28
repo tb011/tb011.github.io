@@ -63,9 +63,9 @@ Train {1, 2, 3} ; Test {4}
 
 We keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.
 
-We can then use this metric to compare its performance amongst other algorigthms.
+We can then use this metric to compare its performance amongst other algorithms.
 
-Plus, this way every block of data is used for testing, rather than just 25%, for instance.
+*K* = 10, is a popular default. Meaning we train on 9 folds of the data, and test on the remaining unseen fold. In using *k*-fold cross-validation it means that every block of data is used for testing, rather than just 25%, for instance.
 
 ## Leave one out cross-validation
 
