@@ -11,7 +11,7 @@ The question:
 
 When we do a 25% / 75% split. How do we know that the i.e. last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? It may randomly not be a good selection.
 
-Bring in k-fold cross-validation.
+Bring in *k*-fold cross-validation.
 
 ## *K*-fold cross validation
 
