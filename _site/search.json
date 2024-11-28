@@ -25,7 +25,7 @@
     "href": "health_data_analysis.html",
     "title": "Health Data Analysis",
     "section": "",
-    "text": "Given series of data tables could I extract valuable information on patients an SQL database?\nLet’s give it a go!\nData Tables\n\nAppendix A\nGender: 1 = Male, 2 = Female, 9 = Unknown\nEthnicity: 01 = White, 02 = Non-white, 03 = Unknown\nAppendix B\nPrimary diagnosis – ICD-10 code:\nProstate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20\nHow many patients were diagnosed with prostate cancer between 2015 and 2017?\n\nSELECT COUNT (Patient_table.patient_id) as number_of_patients \nFROM Patient_table \nJOIN Tumor_table \n ON Patient_table.patient_id = Tumor_table.patient_id \nJOIN Regimen_table \n ON Patient_table.patient_id = Regimen_table.patient_id \n WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';"
+    "text": "Aim\nGiven series of data tables could I extract valuable information on patients an SQL database?\nLet’s give it a go!\nData \nData Tables \n\nAppendix A\nGender: 1 = Male, 2 = Female, 9 = Unknown\nEthnicity: 01 = White, 02 = Non-white, 03 = Unknown\nAppendix B\nPrimary diagnosis – ICD-10 code:\nProstate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20\nHow many patients were diagnosed with prostate cancer between 2015 and 2017?\nSELECT COUNT (Patient_table.patient_id) as number_of_patients \nFROM Patient_table \nJOIN Tumor_table \n ON Patient_table.patient_id = Tumor_table.patient_id \nJOIN Regimen_table \n ON Patient_table.patient_id = Regimen_table.patient_id \n WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';\nCount the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?\nSELECT COUNT (Patient_table.patient_id) as number_of_patients\nFROM Patient_table\nJOIN Tumor_table\n  ON Patient_table.patient_id = Tumor_table.patient_id\nJOIN Regimen_table\n  ON Patient_table.patient_id = Regimen_table.patient_id\nWHERE primary_diagnosis = 'C61' \nand regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/01/2017' \nand regimen = 'docetaxel';\nStratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.\nSELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age\n  FROM (SELECT Patient_table.patient_id \n          , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, Regimen_table.regimen_start_date), Date_of_birth) &gt; Regimen_table.regimen_start_date \n         THEN datediff(year, Date_of_birth, Regimen_table.regimen_start_date) - 1 \n                         ELSE datediff(year, Date_of_birth, Regimen_table.regimen_start_date)\n               END) AS Age_at_regimen\n          , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, getdate()), Date_of_birth) &gt; getdate()\n                        THEN datediff(year, Date_of_birth, getdate()) - 1 \n                        ELSE datediff(year, Date_of_birth, getdate())\n               END) AS Age\n          , Regimen, primary_diagnosis, regimen_start_date, gender, Date_of_birth, Ethnicity \n          FROM Patient_table  \nJOIN Tumor_table\n  ON Patient_table.patient_id = Tumor_table.patient_id\nJOIN Regimen_table\n  ON Patient_table.patient_id = Regimen_table.patient_id\nWHERE primary_diagnosis = 'C50' -- breast cancer ICD-10 code\nand regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/12/2020' -- between 2015 and 2020\nand regimen = 'eribulin' \nand gender = 2 -- only women\n      ) AS results\n     WHERE results.Age_at_regimen &gt;= 50\nGROUP BY Ethnicity, Age;"
   },
   {
     "objectID": "health_data_analysis.html#data-tables",
@@ -40,5 +40,40 @@
     "title": "Health Data Analysis",
     "section": "How many patients were diagnosed with prostate cancer between 2015 and 2017?",
     "text": "How many patients were diagnosed with prostate cancer between 2015 and 2017?\n\nSELECT COUNT (Patient_table.patient_id) as number_of_patients \nFROM Patient_table \nJOIN Tumor_table \n ON Patient_table.patient_id = Tumor_table.patient_id \nJOIN Regimen_table \n ON Patient_table.patient_id = Regimen_table.patient_id \n WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';"
+  },
+  {
+    "objectID": "k-fold-validation.html",
+    "href": "k-fold-validation.html",
+    "title": "Health Data Analysis",
+    "section": "",
+    "text": "Aim\nWhen we do a 25%/75% split. How do we know that the i.e. last quarter of the dataset is the best section of the data to test on? Or the random selection we made.\nIt may randomly not be a good selection.\nBring in k-fold cross-validation.\nExample: 4-fold cross validation (k = 4)\n1. split the data in k- (4) folds.\n2. Train on 3 partitions of the data, test on the remaining block. Take the below permutations\nTrain {2, 3, 4} ; Test {1}\n| 1 | - test\n| 2 | - train\n| 3 | - train\n| 4 | - train\nTrain {1, 3, 4} ; Test {2}\n| 1 | - train\n| 2 | - test\n| 3 | - train\n| 4 | - train\nTrain {1, 2, 4} ; Test {3}\n| 1 | - train\n| 2 | - train\n| 3 | - test\n| 4 | - train\nTrain {1, 2, 3} ; Test {4}\n| 1 | - train\n| 2 | - train\n| 3 | - train\n| 4 | - test"
+  },
+  {
+    "objectID": "cross-validation.html",
+    "href": "cross-validation.html",
+    "title": "Cross-validation",
+    "section": "",
+    "text": "The question:\nWhen we do a 25% / 75% split. How do we know that the i.e. last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? It may randomly not be a good selection.\nBring in k-fold cross-validation.\n\nK-fold cross validation\nExample: 4-fold cross validation (k = 4)\n1. split the data in k- (4) folds.\n2. Train on 3 partitions of the data, test on the remaining block. Take the below permutations\nTrain {2, 3, 4} ; Test {1}\n| 1 | - test\n| 2 | - train\n| 3 | - train\n| 4 | - train\nTrain {1, 3, 4} ; Test {2}\n| 1 | - train\n| 2 | - test\n| 3 | - train\n| 4 | - train\nTrain {1, 2, 4} ; Test {3}\n| 1 | - train\n| 2 | - train\n| 3 | - test\n| 4 | - train\nTrain {1, 2, 3} ; Test {4}\n| 1 | - train\n| 2 | - train\n| 3 | - train\n| 4 | - test"
+  },
+  {
+    "objectID": "cross-validation.html#k-fold-cross-validation",
+    "href": "cross-validation.html#k-fold-cross-validation",
+    "title": "Cross-validation",
+    "section": "K-fold cross validation",
+    "text": "K-fold cross validation\nExample: 4-fold cross validation (k = 4)\n1. split the data in k-(4) folds.\n2. Train on 3 partitions of the data, test on the remaining block. Take the below permutations\nTrain {2, 3, 4} ; Test {1}\n| 1 | - test\n| 2 | - train\n| 3 | - train\n| 4 | - train\nTrain {1, 3, 4} ; Test {2}\n| 1 | - train\n| 2 | - test\n| 3 | - train\n| 4 | - train\nTrain {1, 2, 4} ; Test {3}\n| 1 | - train\n| 2 | - train\n| 3 | - test\n| 4 | - train\nTrain {1, 2, 3} ; Test {4}\n| 1 | - train\n| 2 | - train\n| 3 | - train\n| 4 | - test\nWe keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.\nWe can then use this metric to compare its performance amongst other algorigthms.\nPlus, this way every block of data is used for testing, rather than just 25%, for instance."
+  },
+  {
+    "objectID": "cross-validation.html#leave-one-out-cross-validation",
+    "href": "cross-validation.html#leave-one-out-cross-validation",
+    "title": "Cross-validation",
+    "section": "Leave one out cross-validation",
+    "text": "Leave one out cross-validation\nWe could even take this example to the extreme and call each row (record/sample/ individual) as a “fold” and leave one individual out, and see how well the model is at classifying the remaining individual."
+  },
+  {
+    "objectID": "cross-validation.html#final-comments",
+    "href": "cross-validation.html#final-comments",
+    "title": "Cross-validation",
+    "section": "Final comments",
+    "text": "Final comments\nIt can be much slower to partition the data in to k-folds and test it. It depends how big your k is!"
   }
 ]

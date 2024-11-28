@@ -1,0 +1,76 @@
+---
+title: "Cross-validation"
+editor: visual
+categories:
+  - Machine learning
+  - Cross-validation
+  - Data
+---
+
+The question:
+
+When we do a 25% / 75% split. How do we know that the i.e. last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? It may randomly not be a good selection.
+
+Bring in k-fold cross-validation.
+
+## K-fold cross validation
+
+Example: 4-fold cross validation (k = 4)
+
+1\. split the data in *k*-(4) folds.
+
+2\. Train on 3 partitions of the data, test on the remaining block. Take the below permutations
+
+Train {2, 3, 4} ; Test {1}
+
+\| 1 \| - test
+
+\| 2 \| - train
+
+\| 3 \| - train
+
+\| 4 \| - train
+
+Train {1, 3, 4} ; Test {2}
+
+\| 1 \| - train
+
+\| 2 \| - test
+
+\| 3 \| - train
+
+\| 4 \| - train
+
+Train {1, 2, 4} ; Test {3}
+
+\| 1 \| - train
+
+\| 2 \| - train
+
+\| 3 \| - test
+
+\| 4 \| - train
+
+Train {1, 2, 3} ; Test {4}
+
+\| 1 \| - train
+
+\| 2 \| - train
+
+\| 3 \| - train
+
+\| 4 \| - test
+
+We keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.
+
+We can then use this metric to compare its performance amongst other algorigthms.
+
+Plus, this way every block of data is used for testing, rather than just 25%, for instance.
+
+## Leave one out cross-validation
+
+We could even take this example to the extreme and call each row (record/sample/ individual) as a "fold" and leave one individual out, and see how well the model is at classifying the remaining individual.
+
+## Final comments
+
+It can be much slower to partition the data in to *k*-folds and test it. It depends how big your k is!

@@ -9,6 +9,7 @@ website:
         text: Home # button text
       - about.qmd 
       - health_data_analysis.qmd
+      - cross-validation.qmd
       
 format:
   html:
