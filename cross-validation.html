@@ -198,11 +198,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="repeated-stratified-k-fold-cross-validation" class="level2">
 <h2 class="anchored" data-anchor-id="repeated-stratified-k-fold-cross-validation">Repeated stratified k-fold cross-validation</h2>
-<p>If we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html">RepeatedStratifiedKFold</a>. This would mean that we would give our parameter <em>k,</em> for the number of folds and the parameter, <em>n</em> for the number of repeats.</p>
+<p>If we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html">RepeatedStratifiedKFold</a>. This would mean that we would give our parameter <em>k,</em> for the number of folds and the parameter, <em>n</em> for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html">repeated <em>k-</em>fold</a> cross-validation without the stratification!</p>
 </section>
 <section id="final-comments" class="level2">
 <h2 class="anchored" data-anchor-id="final-comments">Final comments</h2>
-<p>It can be much slower to partition the data in to <em>k</em>-folds (or repeated/stratified <em>k</em>-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!</p>
+<p>It can be much slower to partition the data in to <em>k</em>-folds (or repeated/stratified/repeated stratified <em>k</em>-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!</p>
 
 
 </section>

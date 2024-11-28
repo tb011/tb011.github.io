@@ -39,14 +39,14 @@
     "href": "cross-validation.html#repeated-stratified-k-fold-cross-validation",
     "title": "Cross-validation",
     "section": "Repeated stratified k-fold cross-validation",
-    "text": "Repeated stratified k-fold cross-validation\nIf we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using RepeatedStratifiedKFold. This would mean that we would give our parameter k, for the number of folds and the parameter, n for the number of repeats."
+    "text": "Repeated stratified k-fold cross-validation\nIf we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using RepeatedStratifiedKFold. This would mean that we would give our parameter k, for the number of folds and the parameter, n for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use repeated k-fold cross-validation without the stratification!"
   },
   {
     "objectID": "cross-validation.html#final-comments",
     "href": "cross-validation.html#final-comments",
     "title": "Cross-validation",
     "section": "Final comments",
-    "text": "Final comments\nIt can be much slower to partition the data in to k-folds (or repeated/stratified k-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!"
+    "text": "Final comments\nIt can be much slower to partition the data in to k-folds (or repeated/stratified/repeated stratified k-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!"
   },
   {
     "objectID": "about.html",
