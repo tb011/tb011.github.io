@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tb011.github.io/health_data_analysis.html</loc>
-    <lastmod>2024-11-18T18:33:50.987Z</lastmod>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
   </url>
   <url>
-    <loc>https://tb011.github.io/projects.html</loc>
-    <lastmod>2024-11-18T18:33:50.987Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tb011.github.io/about.html</loc>
-    <lastmod>2024-11-18T18:33:50.987Z</lastmod>
+    <loc>https://tb011.github.io/cross-validation.html</loc>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/favourites.html</loc>
-    <lastmod>2024-11-18T18:33:50.987Z</lastmod>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/about.html</loc>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/projects.html</loc>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/index.html</loc>
-    <lastmod>2024-11-18T18:33:50.987Z</lastmod>
+    <lastmod>2024-11-28T12:08:53.129Z</lastmod>
   </url>
 </urlset>
