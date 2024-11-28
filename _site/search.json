@@ -96,5 +96,12 @@
     "title": "Cross-validation",
     "section": "Repeated stratified k-fold cross-validation",
     "text": "Repeated stratified k-fold cross-validation\nIf we would really like to go one step further, we can repeat the random sampling of individuals in with a different randomisation in each repetition using RepeatedStratifiedKFold. This would mean that we would give our parameter k, for the number of folds and the parameter, n for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use repeated k-fold cross-validation without the stratification!"
+  },
+  {
+    "objectID": "cross-validation.html#references",
+    "href": "cross-validation.html#references",
+    "title": "Cross-validation",
+    "section": "References",
+    "text": "References\nhttps://machinelearningmastery.com/\nhttps://scikit-learn.org/stable/index.html"
   }
 ]
