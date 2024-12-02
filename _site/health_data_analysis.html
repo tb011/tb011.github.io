@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./cross-validation.html"> 
 <span class="menu-text">Cross-validation</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./basics-jupyter.html"> 
+<span class="menu-text">Diabetes Logistic Regression</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -126,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Health Data Analysis</h1>
   <div class="quarto-categories">
     <div class="quarto-category">SQL</div>
-    <div class="quarto-category">NHS Data</div>
+    <div class="quarto-category">Health Data</div>
     <div class="quarto-category">Database</div>
   </div>
   </div>
@@ -148,8 +152,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Aim</strong></p>
 <p>Given series of data tables could I extract valuable information on patients an SQL database?</p>
 <p>Let’s give it a go!</p>
-<p><strong>Data </strong></p>
-<p><strong><em>Data Tables </em></strong></p>
+<p><strong>Data</strong></p>
+<p><strong><em>Data Tables</em></strong></p>
 <p><img src="images/data_tables.png" class="img-fluid" width="400"></p>
 <p><strong><em>Appendix A</em></strong></p>
 <p>Gender: 1 = Male, 2 = Female, 9 = Unknown</p>
@@ -158,13 +162,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Primary diagnosis – ICD-10 code:</p>
 <p>Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20</p>
 <p><strong>How many patients were diagnosed with prostate cancer between 2015 and 2017?</strong></p>
-<pre><code>SELECT COUNT (Patient_table.patient_id) as number_of_patients 
-FROM Patient_table 
-JOIN Tumor_table 
- ON Patient_table.patient_id = Tumor_table.patient_id 
-JOIN Regimen_table 
- ON Patient_table.patient_id = Regimen_table.patient_id 
- WHERE primary_diagnosis = 'C61' and regimen_start_date \&gt;= '01/01/2015' and regimen_start_date \&lt;= '31/01/2017';</code></pre>
+<pre class="{sql}"><code>    SELECT COUNT (Patient_table.patient_id) as number_of_patients 
+    FROM Patient_table 
+    JOIN Tumor_table 
+     ON Patient_table.patient_id = Tumor_table.patient_id 
+    JOIN Regimen_table 
+     ON Patient_table.patient_id = Regimen_table.patient_id 
+     WHERE primary_diagnosis = 'C61' and regimen_start_date \&gt;= '01/01/2015' and regimen_start_date \&lt;= '31/01/2017';</code></pre>
 <p><strong>Count the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?</strong></p>
 <pre><code>SELECT COUNT (Patient_table.patient_id) as number_of_patients
 FROM Patient_table
