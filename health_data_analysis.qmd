@@ -45,6 +45,7 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
 
 **Count the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?**
 
+```{sql}
     SELECT COUNT (Patient_table.patient_id) as number_of_patients
     FROM Patient_table
     JOIN Tumor_table
@@ -54,7 +55,9 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
     WHERE primary_diagnosis = 'C61' 
     and regimen_start_date >= '01/01/2015' and  regimen_start_date <= '31/01/2017' 
     and regimen = 'docetaxel';
+```
 
+```{sql}
 **Stratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.**
 
     SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age
@@ -80,3 +83,4 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
           ) AS results
          WHERE results.Age_at_regimen >= 50
     GROUP BY Ethnicity, Age;
+```
