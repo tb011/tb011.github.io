@@ -4,7 +4,7 @@ editor: visual
 categories:
   - Machine learning
   - Cross-validation
-  - Statistics
+  - Python
 ---
 
 The question:
@@ -17,9 +17,9 @@ Bring in *k*-fold cross-validation.
 
 Example: 4-fold cross validation (*k* = 4)
 
- 1. split the data in *k*-(4) folds.
+1.  split the data in *k*-(4) folds.
 
-2. Train on 3 partitions of the data, test on the remaining block.
+2.  Train on 3 partitions of the data, test on the remaining block.
 
 Take the following permutations:
 

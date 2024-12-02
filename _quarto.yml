@@ -10,6 +10,7 @@ website:
       - about.qmd 
       - health_data_analysis.qmd
       - cross-validation.qmd
+      - basics-jupyter.qmd
       
 format:
   html:
