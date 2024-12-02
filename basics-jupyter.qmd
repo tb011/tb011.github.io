@@ -7,10 +7,9 @@ jupyter: python3
 ---
 
 ## Logistic regression
- 
-Using Logistic regression as a classifier (Machine Learning) 
- 
- 
+
+Using Logistic regression as a classifier (Machine Learning)
+
 ```{python}
 from ucimlrepo import fetch_ucirepo 
 import pandas as pd
