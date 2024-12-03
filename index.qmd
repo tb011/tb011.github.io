@@ -1,6 +1,9 @@
 ---
-listing:
-  contents: 
-     - "*.qmd"
-  type: table
+title: "tb011.github.io"
 ---
+
+Hello! \
+\
+And welcome to my blog. Here we discuss all things amongst my favourite things: health data, statistics, machine learning and evreything in between.
+
+Let's go!

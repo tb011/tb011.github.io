@@ -7,10 +7,8 @@ website:
     left:
       - href: index.qmd #landing page 
         text: Home # button text
+      - blog.qmd
       - about.qmd 
-      - health_data_analysis.qmd # 
-      - cross-validation.qmd
-      - basics-jupyter.qmd
       
 format:
   html:

@@ -1,0 +1,11 @@
+---
+title: "Blog"
+listing:
+  contents: 
+     - posts
+  type: table
+  fields: [title, categories]
+  sort:
+    - "title"
+    - "categories"
+---

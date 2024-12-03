@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>tb011.github.io</title>
+<title>Health Data Analysis – tb011.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">tb011.github.io</span>
     </a>
   </div>
@@ -89,15 +89,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -119,8 +119,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">tb011.github.io</h1>
-</div>
+<h1 class="title">Health Data Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">Health Data</div>
+    <div class="quarto-category">Database</div>
+  </div>
+  </div>
 
 
 
@@ -136,10 +141,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hello!<br>
-<br>
-And welcome to my blog. Here we discuss all things amongst my favourite things: health data, statistics, machine learning and evreything in between.</p>
-<p>Let’s go!</p>
+<p><strong>Aim</strong></p>
+<p>Given series of data tables could I extract valuable information on patients an SQL database?</p>
+<p>Let’s give it a go!</p>
+<p><strong>Data</strong></p>
+<p><strong><em>Data Tables</em></strong></p>
+<p><img src="../images/data_tables.png" class="img-fluid" width="400"></p>
+<p><strong><em>Appendix A</em></strong></p>
+<p>Gender: 1 = Male, 2 = Female, 9 = Unknown</p>
+<p>Ethnicity: 01 = White, 02 = Non-white, 03 = Unknown</p>
+<p><strong><em>Appendix B</em></strong></p>
+<p>Primary diagnosis – ICD-10 code:</p>
+<p>Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20</p>
+<p><strong>How many patients were diagnosed with prostate cancer between 2015 and 2017?</strong></p>
+<pre class="{sql}"><code>    SELECT COUNT (Patient_table.patient_id) as number_of_patients 
+    FROM Patient_table 
+    JOIN Tumor_table 
+     ON Patient_table.patient_id = Tumor_table.patient_id 
+    JOIN Regimen_table 
+     ON Patient_table.patient_id = Regimen_table.patient_id 
+     WHERE primary_diagnosis = 'C61' and regimen_start_date \&gt;= '01/01/2015' and regimen_start_date \&lt;= '31/01/2017';</code></pre>
+<p><strong>Count the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?</strong></p>
+<pre class="{sql}"><code>    SELECT COUNT (Patient_table.patient_id) as number_of_patients
+    FROM Patient_table
+    JOIN Tumor_table
+      ON Patient_table.patient_id = Tumor_table.patient_id
+    JOIN Regimen_table
+      ON Patient_table.patient_id = Regimen_table.patient_id
+    WHERE primary_diagnosis = 'C61' 
+    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/01/2017' 
+    and regimen = 'docetaxel';</code></pre>
+<p><strong>Stratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.</strong></p>
+<pre class="{sql}"><code>
+
+    SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age
+      FROM (SELECT Patient_table.patient_id 
+              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, Regimen_table.regimen_start_date), Date_of_birth) &gt; Regimen_table.regimen_start_date 
+             THEN datediff(year, Date_of_birth, Regimen_table.regimen_start_date) - 1 
+                             ELSE datediff(year, Date_of_birth, Regimen_table.regimen_start_date)
+                   END) AS Age_at_regimen
+              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, getdate()), Date_of_birth) &gt; getdate()
+                            THEN datediff(year, Date_of_birth, getdate()) - 1 
+                            ELSE datediff(year, Date_of_birth, getdate())
+                   END) AS Age
+              , Regimen, primary_diagnosis, regimen_start_date, gender, Date_of_birth, Ethnicity 
+              FROM Patient_table  
+    JOIN Tumor_table
+      ON Patient_table.patient_id = Tumor_table.patient_id
+    JOIN Regimen_table
+      ON Patient_table.patient_id = Regimen_table.patient_id
+    WHERE primary_diagnosis = 'C50' -- breast cancer ICD-10 code
+    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/12/2020' -- between 2015 and 2020
+    and regimen = 'eribulin' 
+    and gender = 2 -- only women
+          ) AS results
+         WHERE results.Age_at_regimen &gt;= 50
+    GROUP BY Ethnicity, Age;</code></pre>
 
 
 

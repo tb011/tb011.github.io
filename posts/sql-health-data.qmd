@@ -17,7 +17,7 @@ Let's give it a go!
 
 ***Data Tables***
 
-![](images/data_tables.png){width="400"}
+![](../images/data_tables.png){width="400"}
 
 ***Appendix A***
 
@@ -57,8 +57,10 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
     and regimen = 'docetaxel';
 ```
 
-```{sql}
 **Stratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.**
+
+```{sql}
+
 
     SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age
       FROM (SELECT Patient_table.patient_id 

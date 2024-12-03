@@ -1,0 +1,155 @@
+---
+title: "Logistic Regression (classification)"
+format: 
+  html:
+    code-fold: false
+jupyter: python3
+categories:
+  - Machine Learning
+  - Health data
+  - Python
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+It turns out this this topic is a little bit controversial for some.
+Some say that logistic regression is a regression model (hence the
+name), other swear it is a classification model. Well... I'm here to say
+that both sides are right! Traditionally, logistic regression is a
+statistical regression model as it gives us the probability of an
+observation belonging to class. However, if this method is coupled with
+a 'decider/threshold' then it can indeed be turned into a classification
+method. For instance, lets say our model states that given the data, a
+specific patient has the estimated probability of 0.55 of belonging to
+the diabetics class (*p = 0.55).* We can apply a threshold at 0.5 which
+classifies patients below this threshold to belong to the non-diabetes
+class, and those \>= 0.5 to belong to the diabetes class, and to be
+therefore classified as a diabetic. Sci-kit learn library uses 0.5 as a
+threshold, but there's nothing to stop you from defining your own value!
+So, let's take a walk through an example together.. first we will take a
+look at a binomial example and then, approach a multinomial logistic
+regression with a three classes.
+
+## Bionomial logistic regression
+
+#### Dataset
+
+For this dataset we are going to use the [CDC Diabetes Health
+Indicators](https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)
+dataset which I came across on the UCI Irvine Machine Learning
+Repository.
+
+#### Let's program this in python
+
+```{python}
+# These are the libraries which we will require:
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn import metrics
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from collections import Counter
+```
+
+### Exploratory Data Anaysis (EDA)
+
+```{python}
+# Let's load in our data
+data_file = "../data/diabetes_binary_health_indicators_BRFSS2015.csv"
+df = pd.read_csv(data_file)
+```
+
+```{python}
+# Create a function that will give us some useful starting statistics about our dataset
+
+def eda(df):
+    head = df.head()
+    shape = df.shape
+    missing_values = df.isnull().sum()
+    return head, shape, missing_values
+
+head, shape, missing_values = eda(df)
+```
+
+```{python}
+head
+# We can see our label, y named 'Diabetes_binary' is the first feature in our dataset 
+```
+
+```{python}
+shape
+# We have 253,680 individuals and 22 features in total
+```
+
+```{python}
+missing_values
+# No missing values have been observed, which means no need to drop or impute any values 
+```
+
+```{python}
+# Lets define a function that will split our dataset into features (x) and our label (y)
+
+def prepData (df, 
+              y_label_name):
+    df = pd.read_csv(data_file)
+    X = df.loc[:, df.columns != y_label_name]
+    y = df[y_label_name]
+    return df, X, y
+  
+df, X, y = prepData(df, y_label_name = 'Diabetes_binary')
+ 
+# Lets use    
+X
+
+y
+```
+
+```{python}
+
+
+def create_model (X_train,
+                  y_train,
+                  X_test,
+                  model, 
+                  random_state,
+                  max_iter):
+    
+    model = LogisticRegression(random_state = random_state, max_iter = max_iter)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    return y_pred, model
+
+def makeHeatmap (class_names, cnf_matrix): 
+    fig, ax = plt.subplots()
+    tick_marks = np.arange(len(class_names))
+    plt.xticks(tick_marks, class_names)
+    plt.yticks(tick_marks, class_names)
+    
+    sns.heatmap(pd.DataFrame(cnf_matrix), annot=True, cmap= "Oranges" ,fmt='g')
+    ax.xaxis.set_label_position("bottom")
+    plt.tight_layout()
+    plt.title('Confusion matrix', y=1.1)
+    plt.ylabel('Actual label')
+    plt.xlabel('Predicted label');
+    
+def calcPresRecall (y_test, y_pred, target_names): 
+    report = classification_report(y_test, y_pred, target_names = target_names)
+    return report
+
+def plotROC (X_test, y_test, model): 
+    y_pred_proba = model.predict_proba(X_test)[::,1]
+    fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
+    auc = metrics.roc_auc_score(y_test, y_pred_proba)
+    plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
+    plt.legend(loc=4)
+    plt.show()
+```
+
+## References
+
+1.  
