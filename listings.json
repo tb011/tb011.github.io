@@ -1,12 +1,10 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
-      "/about.html",
-      "/cross-validation.html",
-      "/basics-jupyter.html",
-      "/health_data_analysis.html",
-      "/projects.html"
+      "/posts/cross-validation.html",
+      "/posts/sql-health-data.html",
+      "/posts/logistic-regression.html"
     ]
   }
 ]

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tb011.github.io/health_data_analysis.html</loc>
-    <lastmod>2024-12-02T14:37:58.848Z</lastmod>
+    <loc>https://tb011.github.io/blog.html</loc>
+    <lastmod>2024-12-03T14:40:02.970Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/posts/logistic-regression.html</loc>
+    <lastmod>2024-12-03T14:40:03.142Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/index.html</loc>
-    <lastmod>2024-12-02T14:37:58.852Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tb011.github.io/projects.html</loc>
-    <lastmod>2024-12-02T14:37:58.852Z</lastmod>
+    <lastmod>2024-12-03T14:40:03.142Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/about.html</loc>
-    <lastmod>2024-12-02T14:37:58.660Z</lastmod>
+    <lastmod>2024-12-03T14:40:02.970Z</lastmod>
   </url>
   <url>
-    <loc>https://tb011.github.io/cross-validation.html</loc>
-    <lastmod>2024-12-02T14:37:58.660Z</lastmod>
+    <loc>https://tb011.github.io/posts/sql-health-data.html</loc>
+    <lastmod>2024-12-03T14:40:03.142Z</lastmod>
   </url>
   <url>
-    <loc>https://tb011.github.io/basics-jupyter.html</loc>
-    <lastmod>2024-12-02T14:37:58.660Z</lastmod>
+    <loc>https://tb011.github.io/posts/cross-validation.html</loc>
+    <lastmod>2024-12-03T14:40:03.142Z</lastmod>
   </url>
 </urlset>

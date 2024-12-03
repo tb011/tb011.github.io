@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>tb011.github.io</title>
+<title>Cross-validation – tb011.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-659650fc26dc25888fc1474f317bb8ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-659650fc26dc25888fc1474f317bb8ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">tb011.github.io</span>
     </a>
   </div>
@@ -89,15 +89,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -111,16 +111,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#k-fold-cross-validation" id="toc-k-fold-cross-validation" class="nav-link active" data-scroll-target="#k-fold-cross-validation"><em>K</em>-fold cross validation</a></li>
+  <li><a href="#leave-one-out-cross-validation" id="toc-leave-one-out-cross-validation" class="nav-link" data-scroll-target="#leave-one-out-cross-validation">Leave one out cross-validation</a></li>
+  <li><a href="#stratified-k-fold-cross-validation" id="toc-stratified-k-fold-cross-validation" class="nav-link" data-scroll-target="#stratified-k-fold-cross-validation">Stratified <em>k</em>-fold cross-validation</a></li>
+  <li><a href="#repeated-stratified-k-fold-cross-validation" id="toc-repeated-stratified-k-fold-cross-validation" class="nav-link" data-scroll-target="#repeated-stratified-k-fold-cross-validation">Repeated stratified <em>k</em>-fold cross-validation</a></li>
+  <li><a href="#final-comments" id="toc-final-comments" class="nav-link" data-scroll-target="#final-comments">Final comments</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">tb011.github.io</h1>
-</div>
+<h1 class="title">Cross-validation</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Machine learning</div>
+    <div class="quarto-category">Cross-validation</div>
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
 
 
 
@@ -136,12 +151,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hello!<br>
-<br>
-And welcome to my blog. Here we discuss all things amongst my favourite things: health data, statistics, machine learning and evreything in between.</p>
-<p>Let’s go!</p>
+<p>The question:</p>
+<p>When we do a 25% / 75% split, how do we know that the last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? Of course, it may <em>randomly not</em> be a good selection.</p>
+<p>Bring in <em>k</em>-fold cross-validation.</p>
+<section id="k-fold-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation"><em>K</em>-fold cross validation</h2>
+<p>Example: 4-fold cross validation (<em>k</em> = 4)</p>
+<ol type="1">
+<li><p>split the data in <em>k</em>-(4) folds.</p></li>
+<li><p>Train on 3 partitions of the data, test on the remaining block.</p></li>
+</ol>
+<p>Take the following permutations:</p>
+<p>Train {2, 3, 4} ; Test {1}:</p>
+<p>| 1 | - test</p>
+<p>| 2 | - train</p>
+<p>| 3 | - train</p>
+<p>| 4 | - train</p>
+<p>Train {1, 3, 4} ; Test {2}:</p>
+<p>| 1 | - train</p>
+<p>| 2 | - test</p>
+<p>| 3 | - train</p>
+<p>| 4 | - train</p>
+<p>Train {1, 2, 4} ; Test {3}:</p>
+<p>| 1 | - train</p>
+<p>| 2 | - train</p>
+<p>| 3 | - test</p>
+<p>| 4 | - train</p>
+<p>Train {1, 2, 3} ; Test {4}:</p>
+<p>| 1 | - train</p>
+<p>| 2 | - train</p>
+<p>| 3 | - train</p>
+<p>| 4 | - test</p>
+<p>We keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.</p>
+<p>We can then use this metric to compare its performance amongst other algorithms.</p>
+<p><em>K</em> = 10, is a popular default. Meaning we train on 9 folds of the data, and test on the remaining unseen fold. In using <em>k</em>-fold cross-validation it means that every block of data is used for testing, rather than just 25%, for instance.</p>
+</section>
+<section id="leave-one-out-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="leave-one-out-cross-validation">Leave one out cross-validation</h2>
+<p>We could even take this example to the extreme and call each row (record/sample/ individual) as a “fold” and leave one individual out, and see how well the model is at classifying the remaining individual.</p>
+</section>
+<section id="stratified-k-fold-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="stratified-k-fold-cross-validation">Stratified <em>k</em>-fold cross-validation</h2>
+<p>This is where the dilemma of unbalanced datasets come to bite. Let me give an example. In our typical health data set up, within a population the likelihood of observing a with a disease (i.e.&nbsp;COPD) is lower than that of observing an individual without COPD. The problem is exacerbated further with rare diseases. Therefore <em>k</em>-fold can fail to work, because we would like each fold to contain individuals with the disease. However, just by random chance, or if a disease is not very prevalent in a population our our sample of the population, then we may risk the event of not having cases (individuals with the disease) in one or many folds of our training data, which as we can envisage would have a poor performance when our model comes across a case in the first time in the test data!</p>
+<p>Therefore, we can use stratified k-fold cross validation to keep the same percentage of samples for each class, in each fold. For example, if our dataset has 10% of patients having COPD and 90% of patients not having COPD. Then by using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html">StratifiedKFold</a> the sci-kit learn library to keep the proportion of cases/non-cases (10% / 90%) the same in each of our <em>k</em> folds.</p>
+</section>
+<section id="repeated-stratified-k-fold-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="repeated-stratified-k-fold-cross-validation">Repeated stratified <em>k</em>-fold cross-validation</h2>
+<p>I came across <a href="https://machinelearningmastery.com/multinomial-logistic-regression-with-python/">a suggestion</a> of using a repeated stratified <em>k</em>-fold cross-validation when I was training a logistic regression model on a <a href="https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset">diabetes dataset</a>. I wondered if it could improve my models performance. And then everything else led from there….</p>
+<p>When using repeated stratified <em>k</em>-fold cross-validation we can repeat the random sampling of individuals in with a different randomisation in each repetition using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html">RepeatedStratifiedKFold</a>. This would mean that we would give our parameter <em>k,</em> for the number of folds and the parameter, <em>n</em> for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html">repeated <em>k-</em>fold</a> cross-validation without the stratification!</p>
+</section>
+<section id="final-comments" class="level2">
+<h2 class="anchored" data-anchor-id="final-comments">Final comments</h2>
+<p>It can be much slower to partition the data in to <em>k</em>-folds (or repeated/stratified/repeated stratified <em>k</em>-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
