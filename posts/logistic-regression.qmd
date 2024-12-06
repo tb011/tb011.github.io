@@ -1,5 +1,5 @@
 ---
-title: "Logistic Regression (classification)"
+title: "Logistic Regression (Machine Learning)"
 format: 
   html:
     code-fold: false
