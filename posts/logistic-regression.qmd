@@ -27,20 +27,15 @@ classifies patients below this threshold to belong to the non-diabetes
 class, and those \>= 0.5 to belong to the diabetes class, and to be
 therefore classified as a diabetic. Sci-kit learn library uses 0.5 as a
 threshold, but there's nothing to stop you from defining your own value!
-So, let's take a walk through an example together.. first we will take a
-look at a binomial example and then, approach a multinomial logistic
-regression with a three classes.
+Let's take a walk through an example together.
 
-## Bionomial logistic regression
-
-#### Dataset
+## The data
 
 For this dataset we are going to use the [CDC Diabetes Health
 Indicators](https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)
 dataset which I came across on the UCI Irvine Machine Learning
-Repository.
-
-#### Let's program this in python
+Repository. We are also going to program this in Python, due to the
+libraries we can utilise with it.
 
 ```{python}
 # These are the libraries which we will require:
@@ -56,7 +51,7 @@ from sklearn.metrics import confusion_matrix
 from collections import Counter
 ```
 
-### Exploratory Data Anaysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 ```{python}
 # Let's load in our data
@@ -92,7 +87,7 @@ missing_values
 ```
 
 ```{python}
-# Lets define a function that will split our dataset into features (x) and our label (y)
+# Let's seperate the data into the feature (independent) variables and the target variable (label) 
 
 def prepData (df, 
               y_label_name):
@@ -103,27 +98,63 @@ def prepData (df,
   
 df, X, y = prepData(df, y_label_name = 'Diabetes_binary')
  
-# Lets use    
-X
 
 y
 ```
 
+## Defining a training and test set
+
+We are going to the use the train_test_split function from the sci-kit
+learn library to divide the dataset in a training/test split (75% and
+25%, respectively).
+
+We will set the seed arbitrarily to '16' so that we can reproduce this
+split each time we run the code.
+
+This will result in four arrays: X_train, y_train, X_test, y_test
+
 ```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 16) 
+```
 
+## Applying a logistic regression model
 
+```{python}
+# Let's define a function that applies our choosen model to training and test data
 def create_model (X_train,
                   y_train,
                   X_test,
-                  model, 
-                  random_state,
-                  max_iter):
-    
-    model = LogisticRegression(random_state = random_state, max_iter = max_iter)
+                  model):
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
-    return y_pred, model
+    return y_pred
 
+# Instantiate the logistic regression model with enough iterations for convergence
+#model = LogisticRegression(random_state = 16, max_iter = 500)
+model =  LogisticRegression(random_state = 16, max_iter = 5000, class_weight = 'balanced')
+
+# now let's run the function
+y_pred = create_model(X_train, y_train,  X_test, model = model)
+
+# Here are our predicted values for y! 
+Counter(y_pred) # Class 1: 60851; Class 2: 2569
+```
+
+## Model performance
+
+### Confusion matrix
+
+Let's visualise how well our model was able to predict the class labels
+using a confusion matrix
+
+```{python}
+cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
+cnf_matrix
+```
+
+Let's create a nice visual heatmap
+
+```{python}
 def makeHeatmap (class_names, cnf_matrix): 
     fig, ax = plt.subplots()
     tick_marks = np.arange(len(class_names))
@@ -137,10 +168,73 @@ def makeHeatmap (class_names, cnf_matrix):
     plt.ylabel('Actual label')
     plt.xlabel('Predicted label');
     
+    
+makeHeatmap(class_names = [0,1], cnf_matrix = cnf_matrix)
+```
+
+```{python}
+
 def calcPresRecall (y_test, y_pred, target_names): 
     report = classification_report(y_test, y_pred, target_names = target_names)
     return report
+  
+report = calcPresRecall (target_names = ['without diabetes', 'with diabetes'], 
+         y_test = y_test, 
+         y_pred = y_pred)
 
+print(report)
+
+```
+
+### Accuracy
+
+First of all a note on accuracy: accuracy can be described as the
+correction predictions out of the total number of observations (taking
+both/all classes into account) (TP + TN / TP + FP + TN + FN). So in this
+case: how many actual diabetics did classify as diabetic and how many
+non-diabetics did we classify as non-diabetic?
+
+Typically, a classification rate of 80% is regarded as "good". However,
+the accuracy metric has a limitation; it doesn't capture the false
+positives, or false negatives for that matter. In other words, how many
+observations did you misclassify? This is why we are going to look at
+precison and recall.
+
+### Precision
+
+Precision = out of all people that were classified as diabetic, the
+percentage who were truly diabetic (TP / TP + FP). When this logistic
+regression model predicts patients are going to suffer from diabetes,
+that patients actually have diabetes 81% of the time.
+
+### Recall
+
+Recall in this example means, out all truly diabetic people, how many of
+them did we correctly classify? (TP / TP + FN). The true positive rate
+is synonymous with recall. If there are patients who have diabetes in
+the test set, this logistic regression model can identify it 16% of the
+time. This is really quite low!
+
+However, remember that there is a trade off between precision and
+recall. The more precise we become, the lower the recall. The greater
+recall, the lower the precision.
+
+### F1 score
+
+The F1 score is the harmonic average between precision and recall. You
+optimise the F1 metric to get a healthy balance between precision and
+recall. Which could be a problem when trying to classify with an
+imbalanced dataset. For instance, where there is a minority class, for
+instance a small amount of observations that you would like to identify.
+
+### ROC curve
+
+Sensitivity is the probability of detecting a TP from all positive observations (TP / TP + FN). In other words, a specificity of 80% will mean that we will identify 80% of people that are diabetic, but we will miss the other 20%
+This is also called the true positive rate and is also known as recall! 
+
+Specificity is the probability of correctly identifying those without the disease. This means we will be able to correctly identify individuals without the disease but will missclassify the others (TN / TN + FP). This is also called the true negative rate. 
+Let's have a look at an ROC curve for our data
+```{python}
 def plotROC (X_test, y_test, model): 
     y_pred_proba = model.predict_proba(X_test)[::,1]
     fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
@@ -148,8 +242,21 @@ def plotROC (X_test, y_test, model):
     plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
     plt.legend(loc=4)
     plt.show()
+
+plotROC(X_test, y_test, model)
 ```
+
+So all in all the model works well with detecting those without diabetes, but 
+the precision and recall for detecting individuals with diabetes, well, that could be very much improved! 
+This is the challenge that we face when working with such unbalanced datasets which 
+is typical with health-related datasets. Let's investigate more on how other models deal with this problem
+and how we can fine tune the hyper parameters, for a model with more precision and a 
+better capability to recall. 
 
 ## References
 
-1.  
+1. UCI: (https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)
+
+2. The Hundred Page Machine Learning Book, by Andriy Burkov: https://github.com/lyric12345/The-Hundred-Page-Machine-Learning-Book-by-Andriy-Burkov
+
+3. Remember precision and recall forever: https://www.youtube.com/watch?v=qWfzIYCvBqo

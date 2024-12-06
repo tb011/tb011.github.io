@@ -156,9 +156,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bionomial-logistic-regression" id="toc-bionomial-logistic-regression" class="nav-link active" data-scroll-target="#bionomial-logistic-regression">Bionomial logistic regression</a>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The data</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a></li>
+  <li><a href="#defining-a-training-and-test-set" id="toc-defining-a-training-and-test-set" class="nav-link" data-scroll-target="#defining-a-training-and-test-set">Defining a training and test set</a></li>
+  <li><a href="#applying-a-logistic-regression-model" id="toc-applying-a-logistic-regression-model" class="nav-link" data-scroll-target="#applying-a-logistic-regression-model">Applying a logistic regression model</a></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance">Model performance</a>
   <ul class="collapse">
-  <li><a href="#exploratory-data-anaysis-eda" id="toc-exploratory-data-anaysis-eda" class="nav-link" data-scroll-target="#exploratory-data-anaysis-eda">Exploratory Data Anaysis (EDA)</a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion matrix</a></li>
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy">Accuracy</a></li>
+  <li><a href="#precision" id="toc-precision" class="nav-link" data-scroll-target="#precision">Precision</a></li>
+  <li><a href="#recall" id="toc-recall" class="nav-link" data-scroll-target="#recall">Recall</a></li>
+  <li><a href="#f1-score" id="toc-f1-score" class="nav-link" data-scroll-target="#f1-score">F1 score</a></li>
+  <li><a href="#roc-curve" id="toc-roc-curve" class="nav-link" data-scroll-target="#roc-curve">ROC curve</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -191,16 +200,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>It turns out this this topic is a little bit controversial for some. Some say that logistic regression is a regression model (hence the name), other swear it is a classification model. Well… I’m here to say that both sides are right! Traditionally, logistic regression is a statistical regression model as it gives us the probability of an observation belonging to class. However, if this method is coupled with a ‘decider/threshold’ then it can indeed be turned into a classification method. For instance, lets say our model states that given the data, a specific patient has the estimated probability of 0.55 of belonging to the diabetics class (<em>p = 0.55).</em> We can apply a threshold at 0.5 which classifies patients below this threshold to belong to the non-diabetes class, and those &gt;= 0.5 to belong to the diabetes class, and to be therefore classified as a diabetic. Sci-kit learn library uses 0.5 as a threshold, but there’s nothing to stop you from defining your own value! So, let’s take a walk through an example together.. first we will take a look at a binomial example and then, approach a multinomial logistic regression with a three classes.</p>
-<section id="bionomial-logistic-regression" class="level2">
-<h2 class="anchored" data-anchor-id="bionomial-logistic-regression">Bionomial logistic regression</h2>
-<section id="dataset" class="level4">
-<h4 class="anchored" data-anchor-id="dataset">Dataset</h4>
-<p>For this dataset we are going to use the <a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">CDC Diabetes Health Indicators</a> dataset which I came across on the UCI Irvine Machine Learning Repository.</p>
-</section>
-<section id="lets-program-this-in-python" class="level4">
-<h4 class="anchored" data-anchor-id="lets-program-this-in-python">Let’s program this in python</h4>
-<div id="f564daf2" class="cell" data-execution_count="1">
+<p>It turns out this this topic is a little bit controversial for some. Some say that logistic regression is a regression model (hence the name), other swear it is a classification model. Well… I’m here to say that both sides are right! Traditionally, logistic regression is a statistical regression model as it gives us the probability of an observation belonging to class. However, if this method is coupled with a ‘decider/threshold’ then it can indeed be turned into a classification method. For instance, lets say our model states that given the data, a specific patient has the estimated probability of 0.55 of belonging to the diabetics class (<em>p = 0.55).</em> We can apply a threshold at 0.5 which classifies patients below this threshold to belong to the non-diabetes class, and those &gt;= 0.5 to belong to the diabetes class, and to be therefore classified as a diabetic. Sci-kit learn library uses 0.5 as a threshold, but there’s nothing to stop you from defining your own value! Let’s take a walk through an example together.</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The data</h2>
+<p>For this dataset we are going to use the <a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">CDC Diabetes Health Indicators</a> dataset which I came across on the UCI Irvine Machine Learning Repository. We are also going to program this in Python, due to the libraries we can utilise with it.</p>
+<div id="e8f5114d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are the libraries which we will require:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -214,14 +218,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exploratory-data-anaysis-eda" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-data-anaysis-eda">Exploratory Data Anaysis (EDA)</h3>
-<div id="1dd66eda" class="cell" data-execution_count="2">
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
+<div id="3b0454dc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's load in our data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_file <span class="op">=</span> <span class="st">"../data/diabetes_binary_health_indicators_BRFSS2015.csv"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="49955163" class="cell" data-execution_count="3">
+<div id="b557c1cc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function that will give us some useful starting statistics about our dataset</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eda(df):</span>
@@ -232,10 +236,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>head, shape, missing_values <span class="op">=</span> eda(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3f80a11e" class="cell" data-execution_count="4">
+<div id="6185f835" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>head</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We can see our label, y named 'Diabetes_binary' is the first feature in our dataset </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -394,17 +398,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="5ed6a3c8" class="cell" data-execution_count="5">
+<div id="65642b57" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>shape</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We have 253,680 individuals and 22 features in total</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>(253680, 22)</code></pre>
 </div>
 </div>
-<div id="336db841" class="cell" data-execution_count="6">
+<div id="0769c5ea" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>missing_values</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># No missing values have been observed, which means no need to drop or impute any values </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>Diabetes_binary         0
 HighBP                  0
 HighChol                0
@@ -430,8 +434,8 @@ Income                  0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="e1ab4a47" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets define a function that will split our dataset into features (x) and our label (y)</span></span>
+<div id="996139e1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's seperate the data into the feature (independent) variables and the target variable (label) </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepData (df, </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              y_label_name):</span>
@@ -442,11 +446,9 @@ dtype: int64</code></pre>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>df, X, y <span class="op">=</span> prepData(df, y_label_name <span class="op">=</span> <span class="st">'Diabetes_binary'</span>)</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets use    </span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>X</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0         0.0
 1         0.0
 2         0.0
@@ -461,50 +463,152 @@ dtype: int64</code></pre>
 Name: Diabetes_binary, Length: 253680, dtype: float64</code></pre>
 </div>
 </div>
-<div id="c362b12d" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_model (X_train,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                  y_train,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                  X_test,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                  model, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                  random_state,</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                  max_iter):</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> LogisticRegression(random_state <span class="op">=</span> random_state, max_iter <span class="op">=</span> max_iter)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    model.fit(X_train, y_train)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y_pred, model</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> makeHeatmap (class_names, cnf_matrix): </span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    tick_marks <span class="op">=</span> np.arange(<span class="bu">len</span>(class_names))</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    plt.xticks(tick_marks, class_names)</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    plt.yticks(tick_marks, class_names)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    sns.heatmap(pd.DataFrame(cnf_matrix), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span> <span class="st">"Oranges"</span> ,fmt<span class="op">=</span><span class="st">'g'</span>)</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_label_position(<span class="st">"bottom"</span>)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">'Confusion matrix'</span>, y<span class="op">=</span><span class="fl">1.1</span>)</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Actual label'</span>)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Predicted label'</span>)<span class="op">;</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcPresRecall (y_test, y_pred, target_names): </span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> classification_report(y_test, y_pred, target_names <span class="op">=</span> target_names)</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotROC (X_test, y_test, model): </span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    y_pred_proba <span class="op">=</span> model.predict_proba(X_test)[::,<span class="dv">1</span>]</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    fpr, tpr, _ <span class="op">=</span> metrics.roc_curve(y_test,  y_pred_proba)</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    auc <span class="op">=</span> metrics.roc_auc_score(y_test, y_pred_proba)</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    plt.plot(fpr,tpr,label<span class="op">=</span><span class="st">"data 1, auc="</span><span class="op">+</span><span class="bu">str</span>(auc))</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="defining-a-training-and-test-set" class="level2">
+<h2 class="anchored" data-anchor-id="defining-a-training-and-test-set">Defining a training and test set</h2>
+<p>We are going to the use the train_test_split function from the sci-kit learn library to divide the dataset in a training/test split (75% and 25%, respectively).</p>
+<p>We will set the seed arbitrarily to ‘16’ so that we can reproduce this split each time we run the code.</p>
+<p>This will result in four arrays: X_train, y_train, X_test, y_test</p>
+<div id="36adc347" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.25</span>, random_state <span class="op">=</span> <span class="dv">16</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="applying-a-logistic-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="applying-a-logistic-regression-model">Applying a logistic regression model</h2>
+<div id="10662b7a" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's define a function that applies our choosen model to training and test data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_model (X_train,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                  y_train,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                  X_test,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                  model):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    model.fit(X_train, y_train)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y_pred</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Instantiate the logistic regression model with enough iterations for convergence</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#model = LogisticRegression(random_state = 16, max_iter = 500)</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span>  LogisticRegression(random_state <span class="op">=</span> <span class="dv">16</span>, max_iter <span class="op">=</span> <span class="dv">5000</span>, class_weight <span class="op">=</span> <span class="st">'balanced'</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># now let's run the function</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> create_model(X_train, y_train,  X_test, model <span class="op">=</span> model)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Here are our predicted values for y! </span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>Counter(y_pred) <span class="co"># Class 1: 60851; Class 2: 2569</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>Counter({np.float64(0.0): 41516, np.float64(1.0): 21904})</code></pre>
+</div>
+</div>
+</section>
+<section id="model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance">Model performance</h2>
+<section id="confusion-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-matrix">Confusion matrix</h3>
+<p>Let’s visualise how well our model was able to predict the class labels using a confusion matrix</p>
+<div id="b0b75b30" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cnf_matrix <span class="op">=</span> metrics.confusion_matrix(y_test, y_pred)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>cnf_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>array([[39532, 15194],
+       [ 1984,  6710]])</code></pre>
+</div>
+</div>
+<p>Let’s create a nice visual heatmap</p>
+<div id="b99393be" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> makeHeatmap (class_names, cnf_matrix): </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    tick_marks <span class="op">=</span> np.arange(<span class="bu">len</span>(class_names))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    plt.xticks(tick_marks, class_names)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    plt.yticks(tick_marks, class_names)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    sns.heatmap(pd.DataFrame(cnf_matrix), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span> <span class="st">"Oranges"</span> ,fmt<span class="op">=</span><span class="st">'g'</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_label_position(<span class="st">"bottom"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">'Confusion matrix'</span>, y<span class="op">=</span><span class="fl">1.1</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Actual label'</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Predicted label'</span>)<span class="op">;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>makeHeatmap(class_names <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>], cnf_matrix <span class="op">=</span> cnf_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="logistic-regression_files/figure-html/cell-12-output-1.png" width="661" height="552" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="97312d31" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcPresRecall (y_test, y_pred, target_names): </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> classification_report(y_test, y_pred, target_names <span class="op">=</span> target_names)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> calcPresRecall (target_names <span class="op">=</span> [<span class="st">'without diabetes'</span>, <span class="st">'with diabetes'</span>], </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>         y_test <span class="op">=</span> y_test, </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>         y_pred <span class="op">=</span> y_pred)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(report)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  precision    recall  f1-score   support
+
+without diabetes       0.95      0.72      0.82     54726
+   with diabetes       0.31      0.77      0.44      8694
+
+        accuracy                           0.73     63420
+       macro avg       0.63      0.75      0.63     63420
+    weighted avg       0.86      0.73      0.77     63420
+</code></pre>
+</div>
+</div>
+</section>
+<section id="accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy">Accuracy</h3>
+<p>First of all a note on accuracy: accuracy can be described as the correction predictions out of the total number of observations (taking both/all classes into account) (TP + TN / TP + FP + TN + FN). So in this case: how many actual diabetics did classify as diabetic and how many non-diabetics did we classify as non-diabetic?</p>
+<p>Typically, a classification rate of 80% is regarded as “good”. However, the accuracy metric has a limitation; it doesn’t capture the false positives, or false negatives for that matter. In other words, how many observations did you misclassify? This is why we are going to look at precison and recall.</p>
+</section>
+<section id="precision" class="level3">
+<h3 class="anchored" data-anchor-id="precision">Precision</h3>
+<p>Precision = out of all people that were classified as diabetic, the percentage who were truly diabetic (TP / TP + FP). When this logistic regression model predicts patients are going to suffer from diabetes, that patients actually have diabetes 81% of the time.</p>
+</section>
+<section id="recall" class="level3">
+<h3 class="anchored" data-anchor-id="recall">Recall</h3>
+<p>Recall in this example means, out all truly diabetic people, how many of them did we correctly classify? (TP / TP + FN). The true positive rate is synonymous with recall. If there are patients who have diabetes in the test set, this logistic regression model can identify it 16% of the time. This is really quite low!</p>
+<p>However, remember that there is a trade off between precision and recall. The more precise we become, the lower the recall. The greater recall, the lower the precision.</p>
+</section>
+<section id="f1-score" class="level3">
+<h3 class="anchored" data-anchor-id="f1-score">F1 score</h3>
+<p>The F1 score is the harmonic average between precision and recall. You optimise the F1 metric to get a healthy balance between precision and recall. Which could be a problem when trying to classify with an imbalanced dataset. For instance, where there is a minority class, for instance a small amount of observations that you would like to identify.</p>
+</section>
+<section id="roc-curve" class="level3">
+<h3 class="anchored" data-anchor-id="roc-curve">ROC curve</h3>
+<p>Sensitivity is the probability of detecting a TP from all positive observations (TP / TP + FN). In other words, a specificity of 80% will mean that we will identify 80% of people that are diabetic, but we will miss the other 20% This is also called the true positive rate and is also known as recall!</p>
+<p>Specificity is the probability of correctly identifying those without the disease. This means we will be able to correctly identify individuals without the disease but will missclassify the others (TN / TN + FP). This is also called the true negative rate. Let’s have a look at an ROC curve for our data</p>
+<div id="4a0e57ae" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotROC (X_test, y_test, model): </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    y_pred_proba <span class="op">=</span> model.predict_proba(X_test)[::,<span class="dv">1</span>]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    fpr, tpr, _ <span class="op">=</span> metrics.roc_curve(y_test,  y_pred_proba)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    auc <span class="op">=</span> metrics.roc_auc_score(y_test, y_pred_proba)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(fpr,tpr,label<span class="op">=</span><span class="st">"data 1, auc="</span><span class="op">+</span><span class="bu">str</span>(auc))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plotROC(X_test, y_test, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="logistic-regression_files/figure-html/cell-14-output-1.png" width="571" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So all in all the model works well with detecting those without diabetes, but the precision and recall for detecting individuals with diabetes, well, that could be very much improved! This is the challenge that we face when working with such unbalanced datasets which is typical with health-related datasets. Let’s investigate more on how other models deal with this problem and how we can fine tune the hyper parameters, for a model with more precision and a better capability to recall.</p>
 </section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ol type="1">
-<li></li>
+<li><p>UCI: (https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)</p></li>
+<li><p>The Hundred Page Machine Learning Book, by Andriy Burkov: https://github.com/lyric12345/The-Hundred-Page-Machine-Learning-Book-by-Andriy-Burkov</p></li>
+<li><p>Remember precision and recall forever: https://www.youtube.com/watch?v=qWfzIYCvBqo</p></li>
 </ol>
 
 
