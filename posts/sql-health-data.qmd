@@ -86,3 +86,5 @@ Prostate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20
          WHERE results.Age_at_regimen >= 50
     GROUP BY Ethnicity, Age;
 ```
+
+Success!

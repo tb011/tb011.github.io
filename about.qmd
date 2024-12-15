@@ -2,7 +2,8 @@
 title: "About"
 ---
 
+I'm a Data Scientist, that started programming in statistics in 2013, and since I haven't looked back! \
+\
+I thought it would would be a great idea to share my ideas on writing programs specifically for those interested in healthcare. Why? Because I am, and why not share my ideas?
 
-1 + 1
-
-
+I hope that you find it useful and if you have any feedback, comments or would like to collaborate, feel free to open a pull request or contact me on [Github](https://github.com/tb011/tb011.github.io)!

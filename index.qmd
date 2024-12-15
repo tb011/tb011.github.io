@@ -2,8 +2,10 @@
 title: "tb011.github.io"
 ---
 
-Hello! \
+Hello!\
 \
-And welcome to my blog. Here we discuss all things amongst my favourite things: health data, statistics, machine learning and evreything in between.
+Welcome to my [blog](https://tb011.github.io/blog.html).
 
-Let's go!
+Here we discuss all of my favourite things; health data, statistics, machine learning, programming and everything in between.
+
+Let's get programming!

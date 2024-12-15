@@ -88,3 +88,8 @@ When using repeated stratified *k*-fold cross-validation we can repeat the rando
 ## Final comments
 
 It can be much slower to partition the data in to *k*-folds (or repeated/stratified/repeated stratified *k*-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!
+
+## References
+
+1.  Sci-kit learn: <https://scikit-learn.org/stable/>
+2.  Machine Learning Mastery: machinelearningmastery.com

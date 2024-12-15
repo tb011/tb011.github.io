@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "tb011.github.io",
     "section": "",
-    "text": "Hello!\n\nAnd welcome to my blog. Here we discuss all things amongst my favourite things: health data, statistics, machine learning and evreything in between.\nLet’s go!"
+    "text": "Hello!\n\nWelcome to my blog.\nHere we discuss all of my favourite things; health data, statistics, machine learning, programming and everything in between.\nLet’s get programming!"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "1 + 1"
+    "text": "I’m a Data Scientist, that started programming in statistics in 2013, and since I haven’t looked back!\n\nI thought it would would be a great idea to share my ideas on writing programs specifically for those interested in healthcare. Why? Because I am, and why not share my ideas?\nI hope that you find it useful and if you have any feedback, comments or would like to collaborate, feel free to open a pull request or contact me on Github!"
   },
   {
     "objectID": "projects.html",
@@ -334,5 +334,12 @@
     "title": "Logistic Regression (Machine Learning)",
     "section": "The data",
     "text": "The data\nFor this dataset we are going to use the CDC Diabetes Health Indicators dataset which I came across on the UCI Irvine Machine Learning Repository. We are also going to program this in Python, due to the libraries we can utilise with it.\n\n# These are the libraries which we will require:\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn import metrics\nfrom sklearn.metrics import classification_report\nfrom sklearn.metrics import confusion_matrix\nfrom collections import Counter"
+  },
+  {
+    "objectID": "posts/cross-validation.html#references",
+    "href": "posts/cross-validation.html#references",
+    "title": "Cross-validation",
+    "section": "References",
+    "text": "References\n\nSci-kit learn: https://scikit-learn.org/stable/\nMachine Learning Mastery: machinelearningmastery.com"
   }
 ]
