@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The data</h2>
 <p>For this dataset we are going to use the <a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">CDC Diabetes Health Indicators</a> dataset which I came across on the UCI Irvine Machine Learning Repository. We are also going to program this in Python, due to the libraries we can utilise with it.</p>
-<div id="9f2bf5dd" class="cell" data-execution_count="1">
+<div id="b1082abc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are the libraries which we will require:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -217,12 +217,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exploratory-data-analysis-eda" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
-<div id="7a398670" class="cell" data-execution_count="2">
+<div id="e9b35dd8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's load in our data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_file <span class="op">=</span> <span class="st">"../data/diabetes_binary_health_indicators_BRFSS2015.csv"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="af372e56" class="cell" data-execution_count="3">
+<div id="e5809c59" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function that will give us some useful starting statistics about our dataset</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eda(df):</span>
@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>head, shape, missing_values <span class="op">=</span> eda(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cc44be79" class="cell" data-execution_count="4">
+<div id="d5dfd504" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>head</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We can see our label, y named 'Diabetes_binary' is the first feature in our dataset </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -395,14 +395,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="e82efd1b" class="cell" data-execution_count="5">
+<div id="8d111fc8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>shape</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We have 253,680 individuals and 22 features in total</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>(253680, 22)</code></pre>
 </div>
 </div>
-<div id="8a734486" class="cell" data-execution_count="6">
+<div id="5e114c71" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>missing_values</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># No missing values have been observed, which means no need to drop or impute any values </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -431,7 +431,7 @@ Income                  0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="d5ac4ecf" class="cell" data-execution_count="7">
+<div id="c78e6421" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's seperate the data into the feature (independent) variables and the target variable (label) </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepData (df, </span>
@@ -466,13 +466,13 @@ Name: Diabetes_binary, Length: 253680, dtype: float64</code></pre>
 <p>We are going to the use the train_test_split function from the sci-kit learn library to divide the dataset in a training/test split (75% and 25%, respectively).</p>
 <p>We will set the seed arbitrarily to ‘16’ so that we can reproduce this split each time we run the code.</p>
 <p>This will result in four arrays: X_train, y_train, X_test, y_test</p>
-<div id="a134207c" class="cell" data-execution_count="8">
+<div id="94bf3c86" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.25</span>, random_state <span class="op">=</span> <span class="dv">16</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="applying-a-logistic-regression-model" class="level2">
 <h2 class="anchored" data-anchor-id="applying-a-logistic-regression-model">Applying a logistic regression model</h2>
-<div id="dcc3a596" class="cell" data-execution_count="9">
+<div id="3074def7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's define a function that applies our choosen model to training and test data</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_model (X_train,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                  y_train,</span>
@@ -501,7 +501,7 @@ Name: Diabetes_binary, Length: 253680, dtype: float64</code></pre>
 <section id="confusion-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="confusion-matrix">Confusion matrix</h3>
 <p>Let’s visualise how well our model was able to predict the class labels using a confusion matrix</p>
-<div id="6651a27d" class="cell" data-execution_count="10">
+<div id="8c9a8c8e" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cnf_matrix <span class="op">=</span> metrics.confusion_matrix(y_test, y_pred)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>cnf_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -510,7 +510,7 @@ Name: Diabetes_binary, Length: 253680, dtype: float64</code></pre>
 </div>
 </div>
 <p>Let’s create a nice visual heatmap</p>
-<div id="eea3ffab" class="cell" data-execution_count="11">
+<div id="64f595f7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> makeHeatmap (class_names, cnf_matrix): </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    tick_marks <span class="op">=</span> np.arange(<span class="bu">len</span>(class_names))</span>
@@ -534,7 +534,7 @@ Name: Diabetes_binary, Length: 253680, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="4521fc7a" class="cell" data-execution_count="12">
+<div id="9805ae0d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcPresRecall (y_test, y_pred, target_names): </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> classification_report(y_test, y_pred, target_names <span class="op">=</span> target_names)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span>
@@ -579,7 +579,7 @@ without diabetes       0.95      0.72      0.82     54726
 <h3 class="anchored" data-anchor-id="roc-curve">ROC curve</h3>
 <p>Sensitivity is the probability of detecting a TP from all positive observations (TP / TP + FN). In other words, a specificity of 80% will mean that we will identify 80% of people that are diabetic, but we will miss the other 20% This is also called the true positive rate and is also known as recall!</p>
 <p>Specificity is the probability of correctly identifying those without the disease. This means we will be able to correctly identify individuals without the disease but will missclassify the others (TN / TN + FP). This is also called the true negative rate. Let’s have a look at an ROC curve for our data</p>
-<div id="d7ae1e5a" class="cell" data-execution_count="13">
+<div id="b963f912" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotROC (X_test, y_test, model): </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    y_pred_proba <span class="op">=</span> model.predict_proba(X_test)[::,<span class="dv">1</span>]</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    fpr, tpr, _ <span class="op">=</span> metrics.roc_curve(y_test,  y_pred_proba)</span>
