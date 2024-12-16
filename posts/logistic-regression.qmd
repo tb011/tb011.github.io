@@ -131,7 +131,6 @@ def create_model (X_train,
 
 # Instantiate the logistic regression model with enough iterations for convergence
 model = LogisticRegression(random_state = 16, max_iter = 500)
-# model =  LogisticRegression(random_state = 16, max_iter = 5000, class_weight = 'balanced')
 
 # now let's run the function
 y_pred = create_model(X_train, y_train,  X_test, model = model)
