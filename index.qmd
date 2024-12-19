@@ -6,6 +6,6 @@ Hello!\
 \
 Welcome to my [blog](https://tb011.github.io/blog.html).
 
-Here we discuss all of my favourite things; health data, statistics, machine learning, programming and everything in between.
+Here we discuss all of my favourite things; health data, programming, machine learning, statistics and everything that falls in-between.
 
 Let's get programming!
