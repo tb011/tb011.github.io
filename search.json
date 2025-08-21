@@ -1,10 +1,101 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
+    "objectID": "lib/python3.12/site-packages/numpy/random/LICENSE.html",
+    "href": "lib/python3.12/site-packages/numpy/random/LICENSE.html",
+    "title": "NCSA Open Source License",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nCross-validation\n\n\nMachine learning, Cross-validation, Python\n\n\n\n\nHealth Data Analysis\n\n\nSQL, Health Data, Database\n\n\n\n\nLogistic Regression (Machine Learning)\n\n\nMachine Learning, Health data, Python\n\n\n\n\n\nNo matching items"
+    "text": "This software is dual-licensed under the The University of Illinois/NCSA Open Source License (NCSA) and The 3-Clause BSD License\n\nNCSA Open Source License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nDeveloped by: Kevin Sheppard (kevin.sheppard@economics.ox.ac.uk, kevin.k.sheppard@gmail.com) http://www.kevinsheppard.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.\nNeither the names of Kevin Sheppard, nor the names of any contributors may be used to endorse or promote products derived from this Software without specific prior written permission.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE.\n\n\n3-Clause BSD License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nComponents\nMany parts of this module have been derived from original sources, often the algorithm’s designer. Component licenses are located with the component code."
+  },
+  {
+    "objectID": "lib/python3.12/site-packages/idna-3.10.dist-info/LICENSE.html",
+    "href": "lib/python3.12/site-packages/idna-3.10.dist-info/LICENSE.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "BSD 3-Clause License\nCopyright (c) 2013-2024, Kim Davies and contributors. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "lib/python3.12/site-packages/pyzmq-26.2.0.dist-info/licenses/LICENSE.html",
+    "href": "lib/python3.12/site-packages/pyzmq-26.2.0.dist-info/licenses/LICENSE.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "BSD 3-Clause License\nCopyright (c) 2009-2012, Brian Granger, Min Ragan-Kelley\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.html",
+    "href": "lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2018 - 2024 Isaac Muse isaacmuse@gmail.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "lib/python3.12/site-packages/httpx-0.27.2.dist-info/licenses/LICENSE.html",
+    "href": "lib/python3.12/site-packages/httpx-0.27.2.dist-info/licenses/LICENSE.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "Copyright © 2019, Encode OSS Ltd. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "Hello!\nWelcome to my blog.\nHere we discuss all of my favourite things; health data, programming, machine learning, statistics and everything that falls in-between.\nLet’s get programming!"
+  },
+  {
+    "objectID": "posts/cross-validation.html",
+    "href": "posts/cross-validation.html",
+    "title": "Cross-validation",
+    "section": "",
+    "text": "The question:\nWhen we do a 25% / 75% split, how do we know that the last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? Of course, it may randomly not be a good selection.\nBring in k-fold cross-validation."
+  },
+  {
+    "objectID": "posts/cross-validation.html#k-fold-cross-validation",
+    "href": "posts/cross-validation.html#k-fold-cross-validation",
+    "title": "Cross-validation",
+    "section": "K-fold cross validation",
+    "text": "K-fold cross validation\nExample: 4-fold cross validation (k = 4)\n\nsplit the data in k-(4) folds.\nTrain on 3 partitions of the data, test on the remaining block.\n\nTake the following permutations:\nTrain {2, 3, 4} ; Test {1}:\n| 1 | - test\n| 2 | - train\n| 3 | - train\n| 4 | - train\nTrain {1, 3, 4} ; Test {2}:\n| 1 | - train\n| 2 | - test\n| 3 | - train\n| 4 | - train\nTrain {1, 2, 4} ; Test {3}:\n| 1 | - train\n| 2 | - train\n| 3 | - test\n| 4 | - train\nTrain {1, 2, 3} ; Test {4}:\n| 1 | - train\n| 2 | - train\n| 3 | - train\n| 4 | - test\nWe keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.\nWe can then use this metric to compare its performance amongst other algorithms.\nK = 10, is a popular default. Meaning we train on 9 folds of the data, and test on the remaining unseen fold. In using k-fold cross-validation it means that every block of data is used for testing, rather than just 25%, for instance."
+  },
+  {
+    "objectID": "posts/cross-validation.html#leave-one-out-cross-validation",
+    "href": "posts/cross-validation.html#leave-one-out-cross-validation",
+    "title": "Cross-validation",
+    "section": "Leave one out cross-validation",
+    "text": "Leave one out cross-validation\nWe could even take this example to the extreme and call each row (record/sample/ individual) as a “fold” and leave one individual out, and see how well the model is at classifying the remaining individual."
+  },
+  {
+    "objectID": "posts/cross-validation.html#stratified-k-fold-cross-validation",
+    "href": "posts/cross-validation.html#stratified-k-fold-cross-validation",
+    "title": "Cross-validation",
+    "section": "Stratified k-fold cross-validation",
+    "text": "Stratified k-fold cross-validation\nThis is where the dilemma of unbalanced datasets come to bite. Let me give an example. In our typical health data set up, within a population the likelihood of observing a with a disease (i.e. COPD) is lower than that of observing an individual without COPD. The problem is exacerbated further with rare diseases. Therefore k-fold can fail to work, because we would like each fold to contain individuals with the disease. However, just by random chance, or if a disease is not very prevalent in a population our our sample of the population, then we may risk the event of not having cases (individuals with the disease) in one or many folds of our training data, which as we can envisage would have a poor performance when our model comes across a case in the first time in the test data!\nTherefore, we can use stratified k-fold cross validation to keep the same percentage of samples for each class, in each fold. For example, if our dataset has 10% of patients having COPD and 90% of patients not having COPD. Then by using StratifiedKFold the sci-kit learn library to keep the proportion of cases/non-cases (10% / 90%) the same in each of our k folds."
+  },
+  {
+    "objectID": "posts/cross-validation.html#repeated-stratified-k-fold-cross-validation",
+    "href": "posts/cross-validation.html#repeated-stratified-k-fold-cross-validation",
+    "title": "Cross-validation",
+    "section": "Repeated stratified k-fold cross-validation",
+    "text": "Repeated stratified k-fold cross-validation\nI came across a suggestion of using a repeated stratified k-fold cross-validation when I was training a logistic regression model on a diabetes dataset. I wondered if it could improve my models performance. And then everything else led from there….\nWhen using repeated stratified k-fold cross-validation we can repeat the random sampling of individuals in with a different randomisation in each repetition using RepeatedStratifiedKFold. This would mean that we would give our parameter k, for the number of folds and the parameter, n for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use repeated k-fold cross-validation without the stratification!"
+  },
+  {
+    "objectID": "posts/cross-validation.html#final-comments",
+    "href": "posts/cross-validation.html#final-comments",
+    "title": "Cross-validation",
+    "section": "Final comments",
+    "text": "Final comments\nIt can be much slower to partition the data in to k-folds (or repeated/stratified/repeated stratified k-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!"
+  },
+  {
+    "objectID": "posts/cross-validation.html#references",
+    "href": "posts/cross-validation.html#references",
+    "title": "Cross-validation",
+    "section": "References",
+    "text": "References\n\nSci-kit learn: https://scikit-learn.org/stable/\nMachine Learning Mastery: machinelearningmastery.com"
+  },
+  {
+    "objectID": "posts/sql-health-data.html",
+    "href": "posts/sql-health-data.html",
+    "title": "Health Data Analysis",
+    "section": "",
+    "text": "Aim\nGiven series of data tables could I extract valuable information on patients an SQL database?\nLet’s give it a go!\nData\nData Tables\n\nAppendix A\nGender: 1 = Male, 2 = Female, 9 = Unknown\nEthnicity: 01 = White, 02 = Non-white, 03 = Unknown\nAppendix B\nPrimary diagnosis – ICD-10 code:\nProstate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20\nHow many patients were diagnosed with prostate cancer between 2015 and 2017?\n    SELECT COUNT (Patient_table.patient_id) as number_of_patients \n    FROM Patient_table \n    JOIN Tumor_table \n     ON Patient_table.patient_id = Tumor_table.patient_id \n    JOIN Regimen_table \n     ON Patient_table.patient_id = Regimen_table.patient_id \n     WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';\nCount the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?\n    SELECT COUNT (Patient_table.patient_id) as number_of_patients\n    FROM Patient_table\n    JOIN Tumor_table\n      ON Patient_table.patient_id = Tumor_table.patient_id\n    JOIN Regimen_table\n      ON Patient_table.patient_id = Regimen_table.patient_id\n    WHERE primary_diagnosis = 'C61' \n    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/01/2017' \n    and regimen = 'docetaxel';\nStratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.\n\n\n    SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age\n      FROM (SELECT Patient_table.patient_id \n              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, Regimen_table.regimen_start_date), Date_of_birth) &gt; Regimen_table.regimen_start_date \n             THEN datediff(year, Date_of_birth, Regimen_table.regimen_start_date) - 1 \n                             ELSE datediff(year, Date_of_birth, Regimen_table.regimen_start_date)\n                   END) AS Age_at_regimen\n              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, getdate()), Date_of_birth) &gt; getdate()\n                            THEN datediff(year, Date_of_birth, getdate()) - 1 \n                            ELSE datediff(year, Date_of_birth, getdate())\n                   END) AS Age\n              , Regimen, primary_diagnosis, regimen_start_date, gender, Date_of_birth, Ethnicity \n              FROM Patient_table  \n    JOIN Tumor_table\n      ON Patient_table.patient_id = Tumor_table.patient_id\n    JOIN Regimen_table\n      ON Patient_table.patient_id = Regimen_table.patient_id\n    WHERE primary_diagnosis = 'C50' -- breast cancer ICD-10 code\n    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/12/2020' -- between 2015 and 2020\n    and regimen = 'eribulin' \n    and gender = 2 -- only women\n          ) AS results\n         WHERE results.Age_at_regimen &gt;= 50\n    GROUP BY Ethnicity, Age;\nSuccess!"
   },
   {
     "objectID": "posts/logistic-regression.html",
@@ -56,13 +147,6 @@
     "text": "References\n\nUCI: (https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators)\nThe Hundred Page Machine Learning Book, by Andriy Burkov: https://github.com/lyric12345/The-Hundred-Page-Machine-Learning-Book-by-Andriy-Burkov\nRemember precision and recall forever: https://www.youtube.com/watch?v=qWfzIYCvBqo"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "tb011.github.io",
-    "section": "",
-    "text": "Hello!\n\nWelcome to my blog.\nHere we discuss all of my favourite things; health data, programming, machine learning, statistics and everything that falls in-between.\nLet’s get programming!"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -70,59 +154,24 @@
     "text": "I’m a Data Scientist, that started programming in statistics in 2013, and since I haven’t looked back!\n\nI thought it would would be a great idea to share my ideas on writing programs specifically for those interested in healthcare. Why? Because I am, and why not share my ideas?\nI hope that you find it useful and if you have any feedback, comments or would like to collaborate, feel free to open a pull request or contact me on Github!"
   },
   {
-    "objectID": "posts/sql-health-data.html",
-    "href": "posts/sql-health-data.html",
-    "title": "Health Data Analysis",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "Aim\nGiven series of data tables could I extract valuable information on patients an SQL database?\nLet’s give it a go!\nData\nData Tables\n\nAppendix A\nGender: 1 = Male, 2 = Female, 9 = Unknown\nEthnicity: 01 = White, 02 = Non-white, 03 = Unknown\nAppendix B\nPrimary diagnosis – ICD-10 code:\nProstate = C61, Breast = C50, Lung = C34, Colorectal = C18, C19, C20\nHow many patients were diagnosed with prostate cancer between 2015 and 2017?\n    SELECT COUNT (Patient_table.patient_id) as number_of_patients \n    FROM Patient_table \n    JOIN Tumor_table \n     ON Patient_table.patient_id = Tumor_table.patient_id \n    JOIN Regimen_table \n     ON Patient_table.patient_id = Regimen_table.patient_id \n     WHERE primary_diagnosis = 'C61' and regimen_start_date \\&gt;= '01/01/2015' and regimen_start_date \\&lt;= '31/01/2017';\nCount the number of patients were diagnosed with prostate cancer who started a docetaxel regimen between 2015 and 2017?\n    SELECT COUNT (Patient_table.patient_id) as number_of_patients\n    FROM Patient_table\n    JOIN Tumor_table\n      ON Patient_table.patient_id = Tumor_table.patient_id\n    JOIN Regimen_table\n      ON Patient_table.patient_id = Regimen_table.patient_id\n    WHERE primary_diagnosis = 'C61' \n    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/01/2017' \n    and regimen = 'docetaxel';\nStratified by ethnicity and age, count the number of patients diagnosed with breast cancer who started an eribulin regimen between 2015 and 2020. Only count women who were aged ≥50 years at the start of the regimen.\n\n\n    SELECT COUNT(patient_id) AS number_of_patients, Ethnicity, Age\n      FROM (SELECT Patient_table.patient_id \n              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, Regimen_table.regimen_start_date), Date_of_birth) &gt; Regimen_table.regimen_start_date \n             THEN datediff(year, Date_of_birth, Regimen_table.regimen_start_date) - 1 \n                             ELSE datediff(year, Date_of_birth, Regimen_table.regimen_start_date)\n                   END) AS Age_at_regimen\n              , (CASE WHEN dateadd(year, datediff (year, Date_of_birth, getdate()), Date_of_birth) &gt; getdate()\n                            THEN datediff(year, Date_of_birth, getdate()) - 1 \n                            ELSE datediff(year, Date_of_birth, getdate())\n                   END) AS Age\n              , Regimen, primary_diagnosis, regimen_start_date, gender, Date_of_birth, Ethnicity \n              FROM Patient_table  \n    JOIN Tumor_table\n      ON Patient_table.patient_id = Tumor_table.patient_id\n    JOIN Regimen_table\n      ON Patient_table.patient_id = Regimen_table.patient_id\n    WHERE primary_diagnosis = 'C50' -- breast cancer ICD-10 code\n    and regimen_start_date &gt;= '01/01/2015' and  regimen_start_date &lt;= '31/12/2020' -- between 2015 and 2020\n    and regimen = 'eribulin' \n    and gender = 2 -- only women\n          ) AS results\n         WHERE results.Age_at_regimen &gt;= 50\n    GROUP BY Ethnicity, Age;\nSuccess!"
+    "text": "Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nCategories\n\n\n\n\n\n\n\n\nCross-validation\n\n\nMachine learning, Cross-validation, Python\n\n\n\n\n\n\nHealth Data Analysis\n\n\nSQL, Health Data, Database\n\n\n\n\n\n\nLogistic Regression (Machine Learning)\n\n\nMachine Learning, Health data, Python\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/cross-validation.html",
-    "href": "posts/cross-validation.html",
-    "title": "Cross-validation",
+    "objectID": "lib/python3.12/site-packages/httpcore-1.0.7.dist-info/licenses/LICENSE.html",
+    "href": "lib/python3.12/site-packages/httpcore-1.0.7.dist-info/licenses/LICENSE.html",
+    "title": "tb011.github.io",
     "section": "",
-    "text": "The question:\nWhen we do a 25% / 75% split, how do we know that the last quarter of the dataset (or a random selection of the dataset) is the best selection of the data to test on? Of course, it may randomly not be a good selection.\nBring in k-fold cross-validation."
+    "text": "Copyright © 2020, Encode OSS Ltd. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
   },
   {
-    "objectID": "posts/cross-validation.html#k-fold-cross-validation",
-    "href": "posts/cross-validation.html#k-fold-cross-validation",
-    "title": "Cross-validation",
-    "section": "K-fold cross validation",
-    "text": "K-fold cross validation\nExample: 4-fold cross validation (k = 4)\n\nsplit the data in k-(4) folds.\nTrain on 3 partitions of the data, test on the remaining block.\n\nTake the following permutations:\nTrain {2, 3, 4} ; Test {1}:\n| 1 | - test\n| 2 | - train\n| 3 | - train\n| 4 | - train\nTrain {1, 3, 4} ; Test {2}:\n| 1 | - train\n| 2 | - test\n| 3 | - train\n| 4 | - train\nTrain {1, 2, 4} ; Test {3}:\n| 1 | - train\n| 2 | - train\n| 3 | - test\n| 4 | - train\nTrain {1, 2, 3} ; Test {4}:\n| 1 | - train\n| 2 | - train\n| 3 | - train\n| 4 | - test\nWe keep track of how well the machine learning algorithm does on teach test and then then take the average of the the test data scores.\nWe can then use this metric to compare its performance amongst other algorithms.\nK = 10, is a popular default. Meaning we train on 9 folds of the data, and test on the remaining unseen fold. In using k-fold cross-validation it means that every block of data is used for testing, rather than just 25%, for instance."
-  },
-  {
-    "objectID": "posts/cross-validation.html#leave-one-out-cross-validation",
-    "href": "posts/cross-validation.html#leave-one-out-cross-validation",
-    "title": "Cross-validation",
-    "section": "Leave one out cross-validation",
-    "text": "Leave one out cross-validation\nWe could even take this example to the extreme and call each row (record/sample/ individual) as a “fold” and leave one individual out, and see how well the model is at classifying the remaining individual."
-  },
-  {
-    "objectID": "posts/cross-validation.html#stratified-k-fold-cross-validation",
-    "href": "posts/cross-validation.html#stratified-k-fold-cross-validation",
-    "title": "Cross-validation",
-    "section": "Stratified k-fold cross-validation",
-    "text": "Stratified k-fold cross-validation\nThis is where the dilemma of unbalanced datasets come to bite. Let me give an example. In our typical health data set up, within a population the likelihood of observing a with a disease (i.e. COPD) is lower than that of observing an individual without COPD. The problem is exacerbated further with rare diseases. Therefore k-fold can fail to work, because we would like each fold to contain individuals with the disease. However, just by random chance, or if a disease is not very prevalent in a population our our sample of the population, then we may risk the event of not having cases (individuals with the disease) in one or many folds of our training data, which as we can envisage would have a poor performance when our model comes across a case in the first time in the test data!\nTherefore, we can use stratified k-fold cross validation to keep the same percentage of samples for each class, in each fold. For example, if our dataset has 10% of patients having COPD and 90% of patients not having COPD. Then by using StratifiedKFold the sci-kit learn library to keep the proportion of cases/non-cases (10% / 90%) the same in each of our k folds."
-  },
-  {
-    "objectID": "posts/cross-validation.html#repeated-stratified-k-fold-cross-validation",
-    "href": "posts/cross-validation.html#repeated-stratified-k-fold-cross-validation",
-    "title": "Cross-validation",
-    "section": "Repeated stratified k-fold cross-validation",
-    "text": "Repeated stratified k-fold cross-validation\nI came across a suggestion of using a repeated stratified k-fold cross-validation when I was training a logistic regression model on a diabetes dataset. I wondered if it could improve my models performance. And then everything else led from there….\nWhen using repeated stratified k-fold cross-validation we can repeat the random sampling of individuals in with a different randomisation in each repetition using RepeatedStratifiedKFold. This would mean that we would give our parameter k, for the number of folds and the parameter, n for the number of repeats. The result would be the average result across all folds from all runs. Please note that you are working on an balanced dataset, you can also use repeated k-fold cross-validation without the stratification!"
-  },
-  {
-    "objectID": "posts/cross-validation.html#final-comments",
-    "href": "posts/cross-validation.html#final-comments",
-    "title": "Cross-validation",
-    "section": "Final comments",
-    "text": "Final comments\nIt can be much slower to partition the data in to k-folds (or repeated/stratified/repeated stratified k-folds) rather than splitting the data into a training and test set. Some times, depending on the application, computation time (in training and/or running the model) can be more important scoring a few decimal places higher on accuracy. So that is a trade off that something else for us to consider!"
-  },
-  {
-    "objectID": "posts/cross-validation.html#references",
-    "href": "posts/cross-validation.html#references",
-    "title": "Cross-validation",
-    "section": "References",
-    "text": "References\n\nSci-kit learn: https://scikit-learn.org/stable/\nMachine Learning Mastery: machinelearningmastery.com"
+    "objectID": "lib/python3.12/site-packages/seaborn-0.13.2.dist-info/LICENSE.html",
+    "href": "lib/python3.12/site-packages/seaborn-0.13.2.dist-info/LICENSE.html",
+    "title": "tb011.github.io",
+    "section": "",
+    "text": "Copyright (c) 2012-2023, Michael L. Waskom All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
   }
 ]

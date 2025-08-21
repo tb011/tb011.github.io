@@ -1,27 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tb011.github.io/blog.html</loc>
-    <lastmod>2024-12-19T11:45:37.408Z</lastmod>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/numpy/random/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:01.591Z</lastmod>
   </url>
   <url>
-    <loc>https://tb011.github.io/posts/logistic-regression.html</loc>
-    <lastmod>2024-12-19T11:45:37.584Z</lastmod>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/pandas/tests/indexes/period/test_indexing.html</loc>
+    <lastmod>2025-08-21T18:15:01.910Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/idna-3.10.dist-info/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:00.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/pyzmq-26.2.0.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:02.270Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:03.251Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/httpx-0.27.2.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:00.656Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/index.html</loc>
-    <lastmod>2024-12-19T11:45:37.580Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tb011.github.io/about.html</loc>
-    <lastmod>2024-12-19T11:45:37.408Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tb011.github.io/posts/sql-health-data.html</loc>
-    <lastmod>2024-12-19T11:45:37.584Z</lastmod>
+    <lastmod>2025-08-21T18:15:00.125Z</lastmod>
   </url>
   <url>
     <loc>https://tb011.github.io/posts/cross-validation.html</loc>
-    <lastmod>2024-12-19T11:45:37.584Z</lastmod>
+    <lastmod>2025-08-21T18:15:03.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/posts/sql-health-data.html</loc>
+    <lastmod>2025-08-21T18:15:03.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/posts/logistic-regression.html</loc>
+    <lastmod>2025-08-21T18:15:03.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/about.html</loc>
+    <lastmod>2025-08-21T18:14:59.971Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/blog.html</loc>
+    <lastmod>2025-08-21T18:14:59.972Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/cffi/recompiler.html</loc>
+    <lastmod>2025-08-21T18:15:00.407Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/httpcore-1.0.7.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:00.652Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/seaborn-0.13.2.dist-info/LICENSE.html</loc>
+    <lastmod>2025-08-21T18:15:02.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/pandas/tests/indexes/datetimes/test_indexing.html</loc>
+    <lastmod>2025-08-21T18:15:01.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tb011.github.io/lib/python3.12/site-packages/pandas/tests/indexes/period/test_constructors.html</loc>
+    <lastmod>2025-08-21T18:15:01.910Z</lastmod>
   </url>
 </urlset>
