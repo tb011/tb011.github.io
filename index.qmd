@@ -2,8 +2,8 @@
 title: "tb011.github.io"
 ---
 
-Hello!\
-\
+Hello!
+
 Welcome to my [blog](https://tb011.github.io/blog.html).
 
 Here we discuss all of my favourite things; health data, programming, machine learning, statistics and everything that falls in-between.
